@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Samplats Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav>
+    <div class="navrij">
+      <div class="ik">Samplats</div>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="navdaar" id="menu">
+        <a href="#top">Home</a>
+        <a href="#projecten">Projecten</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="top" class="one">
+    <div class="grid1">
+      <div class="profiel">
+        <img src="images/Profielfoto.png" alt="3D avatar van Samplats">
+      </div>
+      <div>
+        <h1>Hi, ik ben <span class="highlight">Samplats</span></h1>
+        <p class="lead">
+          Developer en coach. Soms vecht ik met mijn code alsof het een basketbalwedstrijd is 🏀👨🏾‍💻,
+          maar net zoals ik mijn spelers begeleid naar een overwinning, begeleid ik mijn lijnen code
+          tot ze scoren. Het resultaat? Een gebruiksvriendelijke website die voor jou speelt én wint.
+        </p>
+        <div class="btn">
+          <a class="btnone" href="#projecten">📂 Projecten</a>
+          <a class="btntwo" href="#contact">✉️ Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="projecten" class="cons">
+    <h2>Projecten</h2>
+
+    <div class="projects">
+
+      <article class="card brightfish">
+        <div class="card-media-img">
+          <img src="images/images (1).png" alt="Brightfish Campagnecalculator">
+        </div>
+        <div class="card-body">
+          <h3>Brightfish – Campagnecalculator</h3>
+          <p>Tool die budgetten berekent voor bioscoopcampagnes. Focus op UX, duidelijke flows en correcte prijsberekening.</p>
+          <div class="card-actions">
+            <a class="chip chip-primary" href="brightfish.html">Details</a>
+            <a class="chip" href="https://www.brightfish-campaigncalculator.be/index.php" target="_blank" rel="noopener">Website</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reactnative">
+        <div class="card-media-img">
+          <img src="images/rn-mockups.png" alt="React Native app mockups">
+        </div>
+        <div class="card-body">
+          <h3>ShopHub – React Native app</h3>
+          <p>Schoolproject in React Native: producten & blogs via API, filters/zoeken/sorteren, navigatie en state (cart/wishlist).</p>
+          <div class="card-actions">
+            <a class="chip chip-primaryr" href="react.html">Details</a>
+            <a class="chip" href="https://github.com/Samplats79/Mobiele-app.git" target="_blank" rel="noopener">Website</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card closetclick">
+        <div class="card-media-img">
+          <img src="images/iMockup - iPhone 15 Pro Max (1).svg" alt="ClosetClick app">
+          <img src="images/iMockup - iPhone 15 Pro Max (2).svg" alt="ClosetClick app">
+        </div>
+        <div class="card-body">
+          <h3>ClosetClick – Duurzame outfit & wardrobe sharing</h3>
+          <p>Outfit-suggesties met kleren die je al hebt. Alles online delen met vrienden; tijdelijk reserveren voor events.</p>
+          <div class="card-actions">
+            <a class="chip chip-primary" href="closet.html">Details</a>
+            <a class="chip" href="https://www.figma.com/proto/VXoUtvixQGCQKni9F1xXD2/lab-2de-zit?node-id=10-18&p=f" target="_blank" rel="noopener">Website</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 🆕 OnexD Tracker kaart -->
+      <article class="card tracker">
+        <div class="card-media-img">
+          <!-- Gebruik 1 of 2 screenshots; naam ze zoals hieronder of pas aan -->
+          <img src="images/tracker-1.png" alt="OnexD Tracker – lijstweergave">
+          <img src="images/tracker-2.png" alt="OnexD Tracker – detail/grafiek">
+        </div>
+        <div class="card-body">
+          <h3>OnexD Tracker – LocalStorage tracker</h3>
+          <p>Webapp om eigen data te tracken (bv. gewoonten/activiteiten). Items worden bewaard in <b>localStorage</b> en automatisch terug ingeladen.</p>
+          <div class="card-actions">
+            <a class="chip chip-primary" href="tracker.html">Details</a>
+            <a class="chip" href="https://onexd-tracker.onrender.com/" target="_blank" rel="noopener">Website</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="skills" class="cons">
+    <h2>Skills</h2>
+    <div class="skillallemaal">
+      <span><img src="images/html.svg"  alt="HTML"></span>
+      <span><img src="images/css.svg"   alt="CSS"></span>
+      <span><img src="images/js.svg"    alt="JavaScript"></span>
+      <span><img src="images/react.svg" alt="React"></span>
+      <span><img src="images/figma.svg" alt="Figma"></span>
+      <span><img src="images/php.svg"   alt="PHP"></span>
+    </div>
+  </section>
+
+  <section id="contact" class="cons">
+    <h2>Contact</h2>
+    <p>Liever meteen schakelen? Mail mij op <a class="mail" href="mailto:Samplatsasubonteng123@gmail.com">Samplatsasubonteng123@gmail.com</a> of gebruik het formulier.</p>
+    <form class="contact-form" action="https://formspree.io/f/your_form_id" method="POST">
+      <div class="form-row">
+        <label for="name">Naam</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-row">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-row">
+        <label for="subject">Onderwerp</label>
+        <input type="text" id="subject" name="subject">
+      </div>
+      <div class="form-row">
+        <label for="message">Bericht</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btnone">Verstuur</button>
+    </form>
+  </section>
+
+  <footer id="footer" class="foot">
+    <div class="footwrap">
+      <div class="foot-left">
+        <h3>Samplats</h3>
+        <p>Developer & coach. Samen iets moois maken?</p>
+      </div>
+      <div class="foot-right">
+        <a class="foot-mail" href="mailto:Samplatsasubonteng123@gmail.com">✉️ Samplatsasubonteng123@gmail.com</a>
+        <div class="foot-links">
+          <a href="#top">Home</a>
+          <a href="#projecten">Projecten</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-copy">© 2025 Samplats</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
