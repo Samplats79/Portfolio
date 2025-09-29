@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfoliosamplats.onrender.com/sitemap.xml
