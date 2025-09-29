@@ -647,10 +647,4 @@ nav.glass {
   .contact-flex { gap: 32px; grid-template-columns: 0.5fr 1.5fr; }
 }
 
-/* Gebruikers met reduced motion: schakel animaties uit */
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .avatar-circle img { animation: none !important; }
-  .avatar-arm { animation: none !important; }
-}
 
