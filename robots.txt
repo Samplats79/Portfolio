@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portfoliosamplats.vercel.app/sitemap.xml
+Sitemap: https://portfoliosamplats.onrender.com/sitemap.xml
