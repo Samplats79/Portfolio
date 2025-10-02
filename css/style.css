@@ -647,4 +647,71 @@ nav.glass {
   .contact-flex { gap: 32px; grid-template-columns: 0.5fr 1.5fr; }
 }
 
+/* === H1 LETTER-VOOR-LETTER (trager & smooth) === */
+#namee {
+  display: inline-block;
+  white-space: pre-wrap;
+  will-change: transform, opacity;
+  /* globale timing-variabelen: */
+  --stagger: 1000ms; /* basis vertraging per letter (mobiel/desktop) */
+  --start: .100s;   /* kleine startpauze voor de eerste letter */
+}
+
+/* naam niet laten breken op tablet/desktop */
+#namee .highlight {
+  white-space: nowrap;
+  border-radius: 6px;
+}
+
+/* per letter */
+#namee .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: nameRise .50s cubic-bezier(.22,.61,.36,1) forwards;
+  animation-delay: calc(var(--start) + var(--i) * var(--stagger));
+}
+
+@keyframes nameRise {
+  60% { transform: translateY(-1px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* tablet: nog iets trager en iets meer “stagger” */
+@media (min-width: 641px) {
+  #namee { --stagger: 95ms; --start: .18s; }
+}
+
+/* desktop: net iets sneller zodat het snappy blijft */
+@media (min-width: 1025px) {
+  #namee { --stagger: 80ms; --start: .16s; }
+}
+
+/* reduced motion respecteren */
+@media (prefers-reduced-motion: reduce) {
+  #namee .char {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* standaard profielfoto */
+.profiel img {
+  width: 150%;
+  transform: translateY(-1%);
+  display: block;
+}
+
+/* alt-foto (switch.jpg) → gewoon cirkel vullen */
+.profiel img[src*="switch.jpg"] {
+  width: 60%;
+  height: 100%;
+  object-fit: cover;      /* vult de cirkel */
+  object-position: center top;  /* bepaalt welk stuk zichtbaar is */
+  transform: none;        /* niet meer verschuiven/scalen */
+}
+
+
+
 

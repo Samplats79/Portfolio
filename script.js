@@ -1,86 +1,106 @@
-/* ====== Nav glass + active link + full-screen mobile menu ====== */
-const nav        = document.querySelector('nav');
-const navMenu    = document.querySelector('.navdaar');
-const hamburger  = document.querySelector('.hamburger');
-const navLinks   = document.querySelectorAll('.navdaar a');
+// ===== HAMBURGER MENU =====
+const burger = document.querySelector('.hamburger');
+const menu   = document.querySelector('#menu');
 
-function updateNavGlass() {
-  if (!nav) return;
-  nav.classList.toggle('glass', window.scrollY > 8);
-}
-
-function highlightActiveLink() {
-  const sections = document.querySelectorAll('header.one, section[id]');
-  let currentId = 'top';
-  sections.forEach((s) => {
-    const top = s.offsetTop - 100;
-    const bottom = top + s.offsetHeight;
-    if (window.scrollY >= top && window.scrollY < bottom) {
-      currentId = s.id || 'top';
-    }
+if (burger && menu) {
+  burger.addEventListener('click', () => {
+    const active = burger.classList.toggle('active');
+    menu.classList.toggle('active', active);
+    burger.setAttribute('aria-expanded', active ? 'true' : 'false');
+    document.body.style.overflow = active ? 'hidden' : '';
   });
-  navLinks.forEach((a) => {
-    const hash = (a.getAttribute('href') || '').replace('#','') || 'top';
-    a.classList.toggle('active', hash === currentId);
+
+  menu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      burger.classList.remove('active');
+      menu.classList.remove('active');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
   });
 }
 
-/* --- menu controls --- */
-function openMobileMenu(){
-  if (!hamburger || !navMenu) return;
-  document.body.dataset.scrollY = window.scrollY;     // iOS fix
-  document.body.classList.add('menu-open');
-  hamburger.classList.add('active');
-  navMenu.classList.add('active');
-  hamburger.setAttribute('aria-expanded', 'true');
-  // lock body without jumping
-  document.body.style.top = `-${document.body.dataset.scrollY}px`;
-  document.body.style.position = 'fixed';
-  document.body.style.width = '100%';
-}
+// ===== ACTIEVE NAV-LINK BIJ SCROLL =====
+const sections = document.querySelectorAll('header[id], section[id]');
+const navLinks = document.querySelectorAll('.navdaar a');
 
-function closeMobileMenu(){
-  if (!hamburger || !navMenu) return;
-  document.body.classList.remove('menu-open');
-  hamburger.classList.remove('active');
-  navMenu.classList.remove('active');
-  hamburger.setAttribute('aria-expanded', 'false');
-  // restore scroll
-  const y = parseInt(document.body.style.top || '0') * -1;
-  document.body.style.position = '';
-  document.body.style.top = '';
-  document.body.style.width = '';
-  window.scrollTo(0, y || 0);
-}
+const setActive = () => {
+  let current = '#top';
+  const scrollY = window.scrollY + 120;
+  sections.forEach(sec => {
+    const top = sec.offsetTop;
+    if (scrollY >= top) current = '#' + sec.id;
+  });
+  navLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === current);
+  });
+};
+window.addEventListener('scroll', setActive);
+setActive();
 
-function toggleMobileMenu(){
-  if (navMenu.classList.contains('active')) closeMobileMenu();
-  else openMobileMenu();
-}
+// ===== H1 LETTER-FOR-LETTER (meer “1-per-1”) =====
+document.addEventListener('DOMContentLoaded', () => {
+  const el = document.getElementById('namee');
+  if (!el) return;
 
-/* --- init + listeners --- */
-function onScrollOrResize(){
-  updateNavGlass();
-  highlightActiveLink();
-}
-onScrollOrResize();
+  const letters = [];
 
-window.addEventListener('scroll', onScrollOrResize, { passive:true });
-window.addEventListener('resize', () => {
-  onScrollOrResize();
-  if (window.innerWidth >= 641) closeMobileMenu(); // force close on desktop
+  const wrapTextNodes = (node) => {
+    Array.from(node.childNodes).forEach(n => {
+      if (n.nodeType === Node.TEXT_NODE) {
+        const text = n.textContent;
+        for (const ch of text) {
+          const span = document.createElement('span');
+          span.className = 'char';
+          span.textContent = ch;
+          letters.push(span);
+          node.insertBefore(span, n);
+        }
+        node.removeChild(n);
+      } else if (n.nodeType === Node.ELEMENT_NODE) {
+        wrapTextNodes(n);
+      }
+    });
+  };
+
+  wrapTextNodes(el);
+
+  letters.forEach((span, i) => {
+    span.style.setProperty('--i', i);
+  });
+
+  // start animatie
+  el.classList.add('animate-chars');
 });
 
-if (hamburger){
-  hamburger.addEventListener('click', toggleMobileMenu);
-  navLinks.forEach(a => a.addEventListener('click', closeMobileMenu));
-  document.addEventListener('click', (e) => {
-    if (!navMenu.classList.contains('active')) return;
-    if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
-      closeMobileMenu();
+// ===== Profielfoto toggle (simpel src wisselen) =====
+const pfImg = document.querySelector('.profiel img');
+if (pfImg) {
+  const primary = pfImg.getAttribute('src');
+  const alt = pfImg.dataset.altSrc || 'images/switch.jpg';
+
+  // preload alt
+  const pre = new Image();
+  pre.src = alt;
+
+  let showingAlt = false;
+
+  const toggleSrc = () => {
+    showingAlt = !showingAlt;
+    pfImg.src = showingAlt ? alt : primary;
+    pfImg.alt = showingAlt
+      ? 'Samplats aan het basketten'
+      : '3D avatar van Samplats';
+  };
+
+  pfImg.style.cursor = 'pointer';
+  pfImg.setAttribute('tabindex', '0');
+
+  pfImg.addEventListener('click', toggleSrc);
+  pfImg.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleSrc();
     }
-  });
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMobileMenu();
   });
 }
