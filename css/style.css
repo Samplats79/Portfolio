@@ -672,17 +672,24 @@ nav.glass {
   animation-delay: calc(var(--start) + var(--i) * var(--stagger));
 }
 
+/* keyframes */
 @keyframes nameRise {
   60% { transform: translateY(-1px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* tablet: nog iets trager en iets meer “stagger” */
+/* ✨ overal dezelfde snelheid */
+#namee {
+  --stagger: 60ms; /* vertraging per letter */
+  --start: .50s;   /* startpauze */
+}
+
+/* tablet: geen aparte override meer nodig */
 @media (min-width: 641px) {
   #namee { --stagger: 60ms; --start: .50s; }
 }
 
-/* desktop: net iets sneller zodat het snappy blijft */
+/* desktop: ook dezelfde */
 @media (min-width: 1025px) {
   #namee { --stagger: 60ms; --start: .50s; }
 }
@@ -695,6 +702,7 @@ nav.glass {
     transform: none;
   }
 }
+
 
 /* standaard profielfoto */
 .profiel img {
