@@ -7,38 +7,32 @@
   <title>Samplats Portfolio</title>
 
   <link rel="canonical" href="https://portfoliosamplats.vercel.app/">
-  <meta name="description" content="Portfolio van Sam Plats — webdeveloper & coach. Projecten in React Native, UX en webapps. Contact opnemen voor samenwerkingen.">
+  <meta name="description" content="Portfolio van Samplats — webdeveloper & coach. Projecten in React Native, UX en webapps. Contact opnemen voor samenwerkingen.">
 
-  <!-- Maak Banner.jpg de eerste en volledige OG-afbeelding -->
+  <!-- ✅ Open Graph voor social previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Samplats — Portfolio">
+  <meta property="og:locale" content="nl_BE">
+  <meta property="og:url" content="https://portfoliosamplats.vercel.app/">
+  <meta property="og:title" content="Samplats — Portfolio">
+  <meta property="og:description" content="Webdeveloper & coach. Projecten in React Native, UX en webapps.">
+  <!-- Belangrijk: exact pad/naam (case-sensitive) en publiek bereikbaar -->
   <meta property="og:image" content="https://portfoliosamplats.vercel.app/images/Banner.jpg">
   <meta property="og:image:secure_url" content="https://portfoliosamplats.vercel.app/images/Banner.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Banner van SamPlats — Webdeveloper & Coach">
+  <meta property="og:image:alt" content="Banner van Samplats — Webdeveloper & Coach">
 
-  <!-- JOUW bestaande OG/Twitter (blijft staan) -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Sam Plats — Portfolio">
-  <meta property="og:description" content="Webdeveloper & coach. Projecten in React Native, UX en webapps.">
-  <meta property="og:url" content="https://portfoliosamplats.vercel.app/">
-  <meta property="og:image" content="https://portfoliosamplats.vercel.app/images/preview.jpg">
-  <meta property="og:image:alt" content="Voorbeeldafbeelding van het portfolio van Sam Plats">
-
+  <!-- ✅ Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Sam Plats — Portfolio">
+  <meta name="twitter:title" content="Samplats — Portfolio">
   <meta name="twitter:description" content="Webdeveloper & coach. Projecten in React Native, UX en webapps.">
-
-  <!-- ADD: extra OG meta (handig maar optioneel) -->
-  <meta property="og:site_name" content="Sam Plats — Portfolio">
-  <meta property="og:locale" content="nl_BE">
-
-  <!-- ADD: Twitter-afbeelding ook op de banner -->
   <meta name="twitter:image" content="https://portfoliosamplats.vercel.app/images/Banner.jpg">
-  <meta name="twitter:image:alt" content="Banner van Sam Plats — Webdeveloper & Coach">
+  <meta name="twitter:image:alt" content="Banner van Samplats — Webdeveloper & Coach">
 
- <!-- Hotjar Tracking Code for https://portfoliosamplats.vercel.app/ -->
-<script>
+  <!-- Hotjar Tracking Code for https://portfoliosamplats.vercel.app/ -->
+  <script>
     (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
         h._hjSettings={hjid:6536591,hjsv:6};
@@ -47,14 +41,15 @@
         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+  </script>
+
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Je bestaande favicon-regel laat ik staan -->
+  <!-- Favicons -->
   <link rel="icon" href="images/favicon.svg" type="image/png">
-  <!-- ADD: correcte MIME voor SVG (mag er gewoon bij, add-only) -->
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -63,13 +58,14 @@
     gtag('config', 'G-XXXXXXX');
   </script>
 
+  <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Person",
-        "name": "SamPlats",
+        "name": "Samplats",
         "url": "https://portfoliosamplats.vercel.app/",
         "jobTitle": "Webdeveloper & Coach",
         "email": "mailto:Samplatsasubonteng123@gmail.com",
@@ -78,7 +74,7 @@
       },
       {
         "@type": "WebSite",
-        "name": "SamPlats Portfolio",
+        "name": "Samplats Portfolio",
         "url": "https://portfoliosamplats.vercel.app/",
         "inLanguage": "nl"
       }
@@ -145,7 +141,6 @@
       <!-- 🆕 OnexD Tracker kaart -->
       <article class="card tracker">
         <div class="card-media-img">
-          <!-- Gebruik 1 of 2 screenshots; naam ze zoals hieronder of pas aan -->
           <img src="images/tracker-1.png" alt="OnexD Tracker – lijstweergave">
           <img src="images/tracker-2.png" alt="OnexD Tracker – detail/grafiek">
         </div>
