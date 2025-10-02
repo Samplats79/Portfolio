@@ -668,7 +668,7 @@ nav.glass {
   display: inline-block;
   opacity: 0;
   transform: translateY(10px);
-  animation: nameRise .50s cubic-bezier(.22,.61,.36,1) forwards;
+  animation: nameRise .40s cubic-bezier(.22,.61,.36,1) forwards;
   animation-delay: calc(var(--start) + var(--i) * var(--stagger));
 }
 
@@ -679,7 +679,7 @@ nav.glass {
 
 /* tablet: nog iets trager en iets meer “stagger” */
 @media (min-width: 641px) {
-  #namee { --stagger: 95ms; --start: .18s; }
+  #namee { --stagger: 70ms; --start: .50s; }
 }
 
 /* desktop: net iets sneller zodat het snappy blijft */
