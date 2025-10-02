@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://portfoliosamplats.onrender.com/</loc></url>
-  <url><loc>https://portfoliosamplats.onrender.com/brightfish.html</loc></url>
-  <url><loc>https://portfoliosamplats.onrender.com/closet.html</loc></url>
-  <url><loc>https://portfoliosamplats.onrender.com/tracker.html</loc></url>
+  <url><loc>https://portfoliosamplats.vercel.app/</loc></url>
+  <url><loc>https://portfoliosamplats.vercel.app/brightfish.html</loc></url>
+  <url><loc>https://portfoliosamplats.vercel.app/tracker.html</loc></url>
 </urlset>
