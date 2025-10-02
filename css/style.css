@@ -679,12 +679,12 @@ nav.glass {
 
 /* tablet: nog iets trager en iets meer “stagger” */
 @media (min-width: 641px) {
-  #namee { --stagger: 70ms; --start: .50s; }
+  #namee { --stagger: 60ms; --start: .50s; }
 }
 
 /* desktop: net iets sneller zodat het snappy blijft */
 @media (min-width: 1025px) {
-  #namee { --stagger: 80ms; --start: .16s; }
+  #namee { --stagger: 60ms; --start: .50s; }
 }
 
 /* reduced motion respecteren */
