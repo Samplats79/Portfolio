@@ -23,10 +23,14 @@
   <nav>
     <div class="navrij">
       <a class="ik" href="index.html">← Samplats</a>
-      <button class="hamburger" aria-label="Menu">
+
+      <!-- 🔧 aria-controls + aria-expanded toegevoegd -->
+      <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="menu">
         <span></span><span></span><span></span>
       </button>
-      <div class="navdaar">
+
+      <!-- 🔧 id="menu" toegevoegd zodat script.js dit kan togglen -->
+      <div class="navdaar" id="menu">
         <a href="index.html#top">Home</a>
         <a href="index.html#projecten">Projecten</a>
         <a href="index.html#contact">Contact</a>
@@ -66,11 +70,11 @@
               <h3>Probleem</h3>
               <p>
                 <b>Kleine bedrijven</b> willen adverteren, maar weten niet hoe ze moeten starten
-                en denken dat het <b>duur</b> is. Daardoor krijgt Brightfish steeds dezelfde vragen.
+                en denken dat het <b>duur</b> is. Daardoor krijgt Brightfish vaak dezelfde vragen.
               </p>
               <p>
-                Onze oplossing: een <b>campagnecalculator</b> voor een snelle prijsinschatting
-                en een <b>button-chatbot</b> die de veelgestelde vragen meteen beantwoordt.
+                Oplossing: een <b>campagnecalculator</b> voor snelle prijsinschatting +
+                een <b>button-chatbot</b> die veelgestelde vragen meteen beantwoordt.
               </p>
             </div>
           </article>
@@ -82,19 +86,13 @@
             <div class="bf-card" id="card-2">
               <h3>Field research</h3>
               <p>
-                We spraken met <b>kleine bedrijven</b>. De boodschap was duidelijk:
-                Brightfish is vaak <b>onbekend</b> en men weet niet goed <b>hoe te beginnen</b>
-                (stappen, prijs, waar komt de spot?).
+                We spraken met <b>kleine bedrijven</b>. Conclusie: Brightfish is vaak
+                <b>onbekend</b> en men weet niet goed <b>hoe te starten</b>.
               </p>
               <p>
-                De website-flow was al <b>simpel</b>, dus we kozen voor een
-                <b>button-chatbot</b> (rechtsonder) die direct helpt met:
+                De site-flow was al simpel, dus we kozen voor een <b>button-chatbot</b> (rechtsonder)
+                die direct helpt met o.a. prijs, bereik/locaties en planning.
               </p>
-              <ul>
-                <li>Prijsindicatie en “hoe start ik?”</li>
-                <li>Bereik/locaties en planning</li>
-                <li>Snel contact opnemen</li>
-              </ul>
             </div>
           </article>
 
@@ -104,13 +102,53 @@
                     aria-controls="card-3" aria-label="Toon: UX flows"></button>
             <div class="bf-card" id="card-3">
               <h3>UX flows</h3>
-              <p>Kies één van de twee duidelijke routes:</p>
+              <p>Na research kozen we twee duidelijke paden:</p>
               <ul>
-                <li><b>Based on campaign</b> — kies film/genre, periode, locatie en formaat.
-                    De tool telt op en toont het totaal.</li>
-                <li><b>Based on your budget</b> — geef je budget in; je krijgt voorstellen
-                    met bereik en prijs.</li>
+                <li><b>Based on campaign</b> – starten met film/genre/slot → berekening.</li>
+                <li><b>Based on budget</b> – starten met bedrag → opties op maat.</li>
               </ul>
+            </div>
+          </article>
+
+          <!-- Stap 4 -->
+          <article class="bf-step" id="step-4">
+            <button class="bf-dot" type="button"
+                    aria-controls="card-4" aria-label="Toon: Wireframes & prototype"></button>
+            <div class="bf-card" id="card-4">
+              <h3>Wireframes & prototype</h3>
+              <p>
+                Wireframes + klikbaar prototype opgezet. De <b>logica</b> van de website uitgewerkt
+                (validatie, stappen, samenvatting) en continu <b>feedback van de klant</b> verwerkt.
+              </p>
+            </div>
+          </article>
+
+          <!-- Stap 5 -->
+          <article class="bf-step" id="step-5">
+            <button class="bf-dot" type="button"
+                    aria-controls="card-5" aria-label="Toon: Design"></button>
+            <div class="bf-card" id="card-5">
+              <h3>Design</h3>
+              <p>
+                Op basis van de <b>documenten van de klant</b> en de Brightfish-branding
+                hebben we het UI-design uitgewerkt (kleuren, typografie, componenten).
+              </p>
+            </div>
+          </article>
+
+          <!-- Stap 6 (laatste) -->
+          <article class="bf-step" id="step-6">
+            <button class="bf-dot" type="button"
+                    aria-controls="card-6" aria-label="Toon: Testen & iteraties"></button>
+            <div class="bf-card" id="card-6">
+              <h3>Testen & iteraties</h3>
+              <p>We hebben de tool met gebruikers getest, feedback verzameld en <b>aangepast waar nodig</b>.</p>
+              <ul>
+                <li>Duidelijkere teksten en labels.</li>
+                <li>Knoppen/volgorde aangescherpt.</li>
+                <li>Kleine bugs gefixt en performance verbeterd.</li>
+              </ul>
+              <p>Resultaat: soepelere flow en minder vragen.</p>
             </div>
           </article>
         </section>
@@ -155,6 +193,7 @@
     <div class="foot-copy">© 2025 Samplats</div>
   </footer>
 
+  <!-- jouw scripts blijven -->
   <script src="script.js"></script>
   <script src="progress.js"></script>
 </body>

@@ -1,8 +1,10 @@
 /* === BASIS (alleen brightfish detailpagina) === */
 body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
+
 h1, h2, h3 { margin: 0 0 14px; }
 h1 { font-size: 36px; }
 h2 { font-size: 24px; }
+
 .boven { color: #64748b; max-width: 52ch; }
 
 /* === NAVBAR === */
@@ -11,7 +13,14 @@ nav { background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0;
 .ik { font-weight: 800; text-decoration: none; color: #0f172a; }
 .navdaar a{ text-decoration: none; color: #0f172a; font-weight: 700; margin-left: 16px; padding: 6px 10px; border-radius: 8px; }
 .navdaar a:hover{ background: rgba(124,58,237,.08); }
-nav.glass{ background: rgba(255,255,255,.65); backdrop-filter: blur(8px) saturate(160%); -webkit-backdrop-filter: blur(8px) saturate(160%); border-bottom: 1px solid rgba(0,0,0,.06); box-shadow: 0 6px 12px rgba(0,0,0,.06); }
+
+
+nav.glass{
+  background: rgba(255,255,255,.65);
+  backdrop-filter: blur(8px) saturate(160%); -webkit-backdrop-filter: blur(8px) saturate(160%);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 6px 12px rgba(0,0,0,.06);
+}
 
 /* === DETAIL HERO === */
 .det { max-width: 1100px; margin: 0 auto; padding: 32px 20px 50px; }
@@ -63,7 +72,7 @@ nav.glass{ background: rgba(255,255,255,.65); backdrop-filter: blur(8px) saturat
   .lijn{ gap:22px; }
 }
 
-/* ============== Timeline ============== */
+/* ============== Timeline (scroll + dots) ============== */
 .bf-timeline{
   position: relative;
   display: grid;
@@ -71,13 +80,17 @@ nav.glass{ background: rgba(255,255,255,.65); backdrop-filter: blur(8px) saturat
   row-gap: 26px;
   column-gap: 14px;
   margin-top: 16px;
-
-  /* ➕ maakt de progress bar langer onderaan */
-  padding-bottom: 140px;
+  padding-bottom: 8px;
 }
 
-/* verticale lijn */
-.bf-track{ position: absolute; left: 11px; top: 0; bottom: 0; width: 0; }
+/* verticale lijn: hoogte wordt via CSS-var gezet */
+.bf-track{
+  position: absolute;
+  left: 11px;
+  top: 0;
+  height: var(--bf-track-h, 0px);
+  width: 0;
+}
 .bf-track__bg{
   position:absolute; left:-7px; top:0; bottom:0;
   width:14px; border-radius:999px; background:#e5e7eb;
@@ -126,14 +139,16 @@ nav.glass{ background: rgba(255,255,255,.65); backdrop-filter: blur(8px) saturat
 .bf-card h3{ margin:0 0 8px; font-size:20px; }
 .bf-card p, .bf-card li{ color:#475569; }
 
-/* states */
-.bf-step.inview .bf-card{ opacity:1; transform:none; }
+/* 🔑 toon kaart alleen als hij in beeld is én de dot is geactiveerd */
+.bf-step.inview.active .bf-card{ opacity:1; transform:none; }
+
+/* active dot style */
 .bf-step.active .bf-dot{
   background:#7c3aed;
   box-shadow: 0 0 0 4px rgba(124,58,237,.18);
 }
 
-/* desktop lucht */
+/* desktop */
 @media (min-width: 1025px){
   .bf-card{ padding:18px 20px; border-radius:18px; }
   .bf-timeline{ row-gap: 30px; }
