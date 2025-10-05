@@ -14,7 +14,6 @@ nav { background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0;
 .navdaar a{ text-decoration: none; color: #0f172a; font-weight: 700; margin-left: 16px; padding: 6px 10px; border-radius: 8px; }
 .navdaar a:hover{ background: rgba(124,58,237,.08); }
 
-
 nav.glass{
   background: rgba(255,255,255,.65);
   backdrop-filter: blur(8px) saturate(160%); -webkit-backdrop-filter: blur(8px) saturate(160%);
@@ -55,8 +54,22 @@ nav.glass{
 
 /* === TABLET === */
 @media (min-width: 641px){
-  h1{ font-size:44px; } h2{ font-size:28px; }
-  .dets{ grid-template-columns:1.1fr 1.2fr; gap:28px; }
+  h1{ font-size:44px; } 
+  h2{ font-size:28px; }
+
+  .dets img{
+    width: 460px;
+  }
+
+  /* Alles links in 1 kolom */
+  .dets{
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: start;
+    justify-items: start;
+  }
+  .dets > img{ justify-self: start; }
+
   .boven{ max-width:60ch; }
   .lijn{ grid-template-columns:repeat(2,1fr); gap:18px; }
   .footwrap{ grid-template-columns:1fr 1fr; text-align:left; }
@@ -65,10 +78,41 @@ nav.glass{
 
 /* === DESKTOP === */
 @media (min-width: 1025px){
-  h1{ font-size:48px; } h2{ font-size:30px; }
+  h1{ font-size:48px; } 
+  h2{ font-size:30px; }
+
+  .boven { 
+    color: #64748b; max-width: 52ch;
+    font-size: 20px;
+   }
+ 
+
   .det{ max-width:1280px; }
-  .dets img{ margin-top:30px; width:100%; margin-bottom:200px; }
-  .dets{ gap:32px; }
+
+  /* Hero: 2 kolommen → logo links, content rechts */
+  .dets{
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 36px;
+    align-items: start;
+  }
+  .dets > img{
+    justify-self: start;
+    max-width: 540px;
+    width: 100%;
+    margin: 12px 0 0;
+  }
+
+  /* laat de inner wrapper geen box maken (zodat kinderen grid-items zijn) */
+  .dets > div { display: contents; }
+
+  /* ⬅️ BELANGRIJK: target zonder '>' zodat het werkt met display: contents */
+  .dets h1,
+  .dets .boven,
+  .dets .btn { grid-column: 2; }
+
+  /* Timeline over beide kolommen, bar blijft links */
+  .bf-timeline { grid-column: 1 / -1; }
+
   .lijn{ gap:22px; }
 }
 
@@ -76,17 +120,17 @@ nav.glass{
 .bf-timeline{
   position: relative;
   display: grid;
-  grid-template-columns: 22px 1fr;
+  grid-template-columns: 22px 1fr;   /* bar links */
   row-gap: 26px;
   column-gap: 14px;
   margin-top: 16px;
   padding-bottom: 8px;
 }
 
-/* verticale lijn: hoogte wordt via CSS-var gezet */
+/* verticale lijn links */
 .bf-track{
   position: absolute;
-  left: 11px;
+  left: 11px; 
   top: 0;
   height: var(--bf-track-h, 0px);
   width: 0;
@@ -139,17 +183,9 @@ nav.glass{
 .bf-card h3{ margin:0 0 8px; font-size:20px; }
 .bf-card p, .bf-card li{ color:#475569; }
 
-/* 🔑 toon kaart alleen als hij in beeld is én de dot is geactiveerd */
+/* states */
 .bf-step.inview.active .bf-card{ opacity:1; transform:none; }
-
-/* active dot style */
 .bf-step.active .bf-dot{
   background:#7c3aed;
   box-shadow: 0 0 0 4px rgba(124,58,237,.18);
-}
-
-/* desktop */
-@media (min-width: 1025px){
-  .bf-card{ padding:18px 20px; border-radius:18px; }
-  .bf-timeline{ row-gap: 30px; }
 }
