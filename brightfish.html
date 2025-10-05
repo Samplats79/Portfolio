@@ -6,26 +6,25 @@
   <title>Brightfish – Details | Samplats</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/bright.css">
-<!-- Hotjar Tracking Code for https://portfoliosamplats.vercel.app/ -->
-<script>
+  <!-- Hotjar -->
+  <script>
     (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:6536591,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:6536591,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+  </script>
+</head>
 <body>
 
   <nav>
     <div class="navrij">
       <a class="ik" href="index.html">← Samplats</a>
       <button class="hamburger" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
       <div class="navdaar">
         <a href="index.html#top">Home</a>
@@ -41,16 +40,81 @@
       <div>
         <h1>Brightfish – Campagnecalculator</h1>
         <p class="boven">
-          Schoolopdracht: Was een groeptaak een webtool die een <b>budgetvoorstel</b> samenstelt voor
-          bioscoopcampagnes. De gebruiker kiest periode, plaatsen en formaten; de tool
-          rekent automatisch het totaal uit en toont een duidelijke samenvatting.
+          Schoolopdracht: webtool die een <b>budgetvoorstel</b> maakt voor bioscoopcampagnes.
+          De gebruiker kiest periode, locaties en formaten; de tool rekent alles uit en geeft een samenvatting.
         </p>
+
         <div class="btn">
           <a class="btnone"
              href="https://www.brightfish-campaigncalculator.be/index.php"
              target="_blank" rel="noopener">Bekijk opdracht</a>
           <a class="btntwo" href="index.html#projecten">Terug naar projecten</a>
         </div>
+
+        <!-- ✅ Timeline -->
+        <section class="bf-timeline" id="bfTimeline" aria-label="Projectstappen">
+          <div class="bf-track" aria-hidden="true">
+            <span class="bf-track__bg"></span>
+            <span class="bf-track__fill" id="bfFill"></span>
+          </div>
+
+          <!-- Stap 1 -->
+          <article class="bf-step" id="step-1">
+            <button class="bf-dot" type="button"
+                    aria-controls="card-1" aria-label="Toon: Probleem"></button>
+            <div class="bf-card" id="card-1">
+              <h3>Probleem</h3>
+              <p>
+                <b>Kleine bedrijven</b> willen adverteren, maar weten niet hoe ze moeten starten
+                en denken dat het <b>duur</b> is. Daardoor krijgt Brightfish steeds dezelfde vragen.
+              </p>
+              <p>
+                Onze oplossing: een <b>campagnecalculator</b> voor een snelle prijsinschatting
+                en een <b>button-chatbot</b> die de veelgestelde vragen meteen beantwoordt.
+              </p>
+            </div>
+          </article>
+
+          <!-- Stap 2 -->
+          <article class="bf-step" id="step-2">
+            <button class="bf-dot" type="button"
+                    aria-controls="card-2" aria-label="Toon: Field research"></button>
+            <div class="bf-card" id="card-2">
+              <h3>Field research</h3>
+              <p>
+                We spraken met <b>kleine bedrijven</b>. De boodschap was duidelijk:
+                Brightfish is vaak <b>onbekend</b> en men weet niet goed <b>hoe te beginnen</b>
+                (stappen, prijs, waar komt de spot?).
+              </p>
+              <p>
+                De website-flow was al <b>simpel</b>, dus we kozen voor een
+                <b>button-chatbot</b> (rechtsonder) die direct helpt met:
+              </p>
+              <ul>
+                <li>Prijsindicatie en “hoe start ik?”</li>
+                <li>Bereik/locaties en planning</li>
+                <li>Snel contact opnemen</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Stap 3 -->
+          <article class="bf-step" id="step-3">
+            <button class="bf-dot" type="button"
+                    aria-controls="card-3" aria-label="Toon: UX flows"></button>
+            <div class="bf-card" id="card-3">
+              <h3>UX flows</h3>
+              <p>Kies één van de twee duidelijke routes:</p>
+              <ul>
+                <li><b>Based on campaign</b> — kies film/genre, periode, locatie en formaat.
+                    De tool telt op en toont het totaal.</li>
+                <li><b>Based on your budget</b> — geef je budget in; je krijgt voorstellen
+                    met bereik en prijs.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+        <!-- ✅ EINDE timeline -->
       </div>
     </div>
 
@@ -59,8 +123,7 @@
         <h3>Mijn rol</h3>
         <ul>
           <li>Front-end</li>
-          <li>UX flows uitwerken in Figma</li>
-
+          <li>UX flows in Figma</li>
         </ul>
       </article>
 
@@ -68,7 +131,7 @@
         <h3>Belangrijkste features</h3>
         <ul>
           <li>Keuzes (periode, locaties, formaten)</li>
-          <li>Duidelijke berekening + samenvatting</li>
+          <li>Automatische berekening + samenvatting</li>
           <li>Responsief en toegankelijk</li>
         </ul>
       </article>
@@ -82,9 +145,7 @@
         <p>Developer & coach. Samen iets moois maken?</p>
       </div>
       <div class="foot-right">
-        <a class="foot-mail" href="mailto:Samplatsasubonteng123@gmail.com">
-          ✉️ Samplatsasubonteng123@gmail.com
-        </a>
+        <a class="foot-mail" href="mailto:Samplatsasubonteng123@gmail.com">✉️ Samplatsasubonteng123@gmail.com</a>
         <div class="foot-links">
           <a href="index.html#projecten">Projecten</a>
           <a href="index.html#contact">Contact</a>
@@ -95,5 +156,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="progress.js"></script>
 </body>
 </html>
