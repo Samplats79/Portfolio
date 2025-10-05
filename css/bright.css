@@ -58,7 +58,7 @@ nav.glass{
   h2{ font-size:28px; }
 
   .dets img{
-    width: 460px;
+    width: 600px;
   }
 
   /* Alles links in 1 kolom */
@@ -68,7 +68,11 @@ nav.glass{
     align-items: start;
     justify-items: start;
   }
-  .dets > img{ justify-self: start; }
+
+  /* ⬅️ AANPASSING: center de afbeelding op tablet */
+  .dets > img{
+    justify-self: center;
+  }
 
   .boven{ max-width:60ch; }
   .lijn{ grid-template-columns:repeat(2,1fr); gap:18px; }
@@ -84,8 +88,7 @@ nav.glass{
   .boven { 
     color: #64748b; max-width: 52ch;
     font-size: 20px;
-   }
- 
+  }
 
   .det{ max-width:1280px; }
 
@@ -105,7 +108,7 @@ nav.glass{
   /* laat de inner wrapper geen box maken (zodat kinderen grid-items zijn) */
   .dets > div { display: contents; }
 
-  /* ⬅️ BELANGRIJK: target zonder '>' zodat het werkt met display: contents */
+  /* plaats de content (titel, tekst, knoppen) in kolom 2 */
   .dets h1,
   .dets .boven,
   .dets .btn { grid-column: 2; }
