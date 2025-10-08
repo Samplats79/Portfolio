@@ -43,7 +43,6 @@ h2 { font-size: 24px; }
   h1 { font-size: 44px; }
   h2 { font-size: 28px; }
 
-  /* beeld gecentreerd op tablet */
   .dets { grid-template-columns: 1fr; gap: 18px; align-items: start; }
   .dets img { width: 600px; margin: 0 auto; }  /* center */
 
@@ -80,7 +79,7 @@ h2 { font-size: 24px; }
   .dets .boven,
   .dets .btn { grid-column: 2; }
 
-  /* Timeline mag over beide kolommen, bar blijft links */
+  /* Timeline over beide kolommen, bar blijft links */
   .bf-timeline { grid-column: 1 / -1; }
 
   .lijn { gap: 22px; }
@@ -141,20 +140,33 @@ h2 { font-size: 24px; }
 }
 .bf-dot:focus-visible{ outline: 2px solid #7c3aed; outline-offset: 3px; }
 
-/* kaart */
+/* kaart – preview -> active */
 .bf-card{
   grid-column: 2;
   background:#fff; border:1px solid #eee; border-radius:16px;
   padding:14px 16px;
   box-shadow: 0 10px 24px rgba(0,0,0,.06);
   opacity: 0; transform: translateY(10px);
-  transition: opacity .28s ease, transform .28s ease;
+  transition: opacity .28s ease, transform .28s ease, filter .28s ease;
 }
 .bf-card h3{ margin:0 0 8px; font-size:20px; }
 .bf-card p, .bf-card li{ color:#475569; }
 
-/* verschijnen + actieve dot */
-.bf-step.inview.active .bf-card{ opacity:1; transform:none; }
+/* preview (in beeld, dot nog niet geraakt) */
+.bf-step.inview:not(.active) .bf-card{
+  opacity: .35;
+  transform: none;
+  filter: saturate(.9);
+}
+
+/* volledig zichtbaar */
+.bf-step.inview.active .bf-card{
+  opacity:1;
+  transform:none;
+  filter:none;
+}
+
+/* actieve dot */
 .bf-step.active .bf-dot{
   background:#7c3aed;
   box-shadow: 0 0 0 4px rgba(124,58,237,.18);
@@ -164,4 +176,10 @@ h2 { font-size: 24px; }
 @media (min-width: 1025px){
   .bf-card{ padding:18px 20px; border-radius:18px; }
   .bf-timeline{ row-gap: 30px; }
+}
+
+/* toegankelijkheid: minder animatie */
+@media (prefers-reduced-motion: reduce) {
+  .bf-card, .bf-track__fill { transition: none !important; }
+  html:focus-within { scroll-behavior: auto; }
 }
