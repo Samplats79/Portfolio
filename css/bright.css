@@ -54,25 +54,16 @@ nav.glass{
 
 /* === TABLET === */
 @media (min-width: 641px){
-  h1{ font-size:44px; } 
-  h2{ font-size:28px; }
+  h1{ font-size:44px; } h2{ font-size:28px; }
 
-  .dets img{
-    width: 600px;
-  }
-
-  /* Alles links in 1 kolom */
+  /* alles links in 1 kolom */
   .dets{
     grid-template-columns: 1fr;
     gap: 18px;
     align-items: start;
     justify-items: start;
   }
-
-  /* ⬅️ AANPASSING: center de afbeelding op tablet */
-  .dets > img{
-    justify-self: center;
-  }
+  .dets > img{ justify-self: start; }
 
   .boven{ max-width:60ch; }
   .lijn{ grid-template-columns:repeat(2,1fr); gap:18px; }
@@ -82,17 +73,10 @@ nav.glass{
 
 /* === DESKTOP === */
 @media (min-width: 1025px){
-  h1{ font-size:48px; } 
-  h2{ font-size:30px; }
-
-  .boven { 
-    color: #64748b; max-width: 52ch;
-    font-size: 20px;
-  }
-
+  h1{ font-size:48px; } h2{ font-size:30px; }
   .det{ max-width:1280px; }
 
-  /* Hero: 2 kolommen → logo links, content rechts */
+  /* hero: 2 kolommen – logo links, content rechts */
   .dets{
     grid-template-columns: 0.9fr 1.1fr;
     gap: 36px;
@@ -105,15 +89,15 @@ nav.glass{
     margin: 12px 0 0;
   }
 
-  /* laat de inner wrapper geen box maken (zodat kinderen grid-items zijn) */
+  /* kinderen van wrapper rechtstreeks grid-items laten zijn */
   .dets > div { display: contents; }
 
-  /* plaats de content (titel, tekst, knoppen) in kolom 2 */
+  /* forceer content rechts */
   .dets h1,
   .dets .boven,
   .dets .btn { grid-column: 2; }
 
-  /* Timeline over beide kolommen, bar blijft links */
+  /* timeline over beide kolommen */
   .bf-timeline { grid-column: 1 / -1; }
 
   .lijn{ gap:22px; }
@@ -130,10 +114,10 @@ nav.glass{
   padding-bottom: 8px;
 }
 
-/* verticale lijn links */
+/* verticale lijn links; hoogte via CSS-var */
 .bf-track{
   position: absolute;
-  left: 11px; 
+  left: 11px;
   top: 0;
   height: var(--bf-track-h, 0px);
   width: 0;
@@ -160,7 +144,7 @@ nav.glass{
 /* stap layout */
 .bf-step{ display: contents; }
 
-/* bol = button */
+/* dot */
 .bf-dot{
   grid-column: 1;
   width:14px; height:14px; border-radius:50%;
@@ -174,21 +158,41 @@ nav.glass{
 }
 .bf-dot:focus-visible{ outline: 2px solid #7c3aed; outline-offset: 3px; }
 
-/* kaart */
+/* kaart – default onzichtbaar */
 .bf-card{
   grid-column: 2;
   background:#fff; border:1px solid #eee; border-radius:16px;
   padding:14px 16px;
   box-shadow: 0 10px 24px rgba(0,0,0,.06);
-  opacity: 0; transform: translateY(10px);
-  transition: opacity .28s ease, transform .28s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .28s ease, transform .28s ease, filter .28s ease;
 }
 .bf-card h3{ margin:0 0 8px; font-size:20px; }
 .bf-card p, .bf-card li{ color:#475569; }
 
-/* states */
-.bf-step.inview.active .bf-card{ opacity:1; transform:none; }
+/* 🟣 PREVIEW: in beeld maar dot nog niet geraakt */
+.bf-step.inview:not(.active) .bf-card{
+  opacity: .35;
+  transform: none;
+  filter: saturate(.9);
+}
+
+/* ✅ VOLLEDIG zichtbaar: in beeld + actief */
+.bf-step.inview.active .bf-card{
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* actieve dot styling */
 .bf-step.active .bf-dot{
   background:#7c3aed;
   box-shadow: 0 0 0 4px rgba(124,58,237,.18);
+}
+
+/* desktop spacing voor timeline */
+@media (min-width: 1025px){
+  .bf-card{ padding:18px 20px; border-radius:18px; }
+  .bf-timeline{ row-gap: 30px; }
 }

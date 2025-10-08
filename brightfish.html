@@ -4,39 +4,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Brightfish – Details | Samplats</title>
+
+  <!-- Basis styles + pagina styles -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/bright.css">
 
-  <!-- Favicons (gekopieerd van index) -->
+  <!-- Favicons (zelfde als index) -->
   <link rel="icon" href="images/favicon.svg" type="image/png">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WLTCC895');</script>
-<!-- End Google Tag Manager -->
-
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WLTCC895');</script>
+  <!-- End Google Tag Manager -->
 </head>
-<body>
 
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLTCC895"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<body>
+  <!-- GTM (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLTCC895"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End GTM (noscript) -->
 
   <nav>
     <div class="navrij">
       <a class="ik" href="index.html">← Samplats</a>
-
-      <!-- 🔧 aria-controls + aria-expanded toegevoegd -->
       <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="menu">
         <span></span><span></span><span></span>
       </button>
-
-      <!-- 🔧 id="menu" toegevoegd zodat script.js dit kan togglen -->
       <div class="navdaar" id="menu">
         <a href="index.html#top">Home</a>
         <a href="index.html#projecten">Projecten</a>
@@ -47,7 +44,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <main class="det">
     <div class="dets">
-      <img src="images/images (1).png" alt="">
+      <img src="images/images (1).png" alt="Brightfish logo">
       <div>
         <h1>Brightfish – Campagnecalculator</h1>
         <p class="boven">
@@ -56,57 +53,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </p>
 
         <div class="btn">
-          <a class="btnone"
-             href="https://www.brightfish-campaigncalculator.be/index.php"
-             target="_blank" rel="noopener">Live demo</a>
+          <a class="btnone" href="https://www.brightfish-campaigncalculator.be/index.php" target="_blank" rel="noopener">Live demo</a>
           <a class="btntwo" href="index.html#projecten">Terug naar projecten</a>
         </div>
 
-        <!-- ✅ Timeline -->
+        <!-- Timeline -->
         <section class="bf-timeline" id="bfTimeline" aria-label="Projectstappen">
           <div class="bf-track" aria-hidden="true">
             <span class="bf-track__bg"></span>
             <span class="bf-track__fill" id="bfFill"></span>
           </div>
 
-          <!-- Stap 1 -->
+          <!-- 1 -->
           <article class="bf-step" id="step-1">
-            <button class="bf-dot" type="button"
-                    aria-controls="card-1" aria-label="Toon: Probleem"></button>
+            <button class="bf-dot" type="button" aria-controls="card-1" aria-label="Toon: Probleem"></button>
             <div class="bf-card" id="card-1">
               <h3>Probleem</h3>
-              <p>
-                <b>Kleine bedrijven</b> willen adverteren, maar weten niet hoe ze moeten starten
-                en denken dat het <b>duur</b> is. Daardoor krijgt Brightfish vaak dezelfde vragen.
-              </p>
-              <p>
-                Oplossing: een <b>campagnecalculator</b> voor snelle prijsinschatting +
-                een <b>button-chatbot</b> die veelgestelde vragen meteen beantwoordt.
-              </p>
+              <p><b>Kleine bedrijven</b> willen adverteren, maar weten niet hoe ze moeten starten
+                en denken dat het <b>duur</b> is. Daardoor krijgt Brightfish vaak dezelfde vragen.</p>
+              <p>Oplossing: een <b>campagnecalculator</b> voor snelle prijsinschatting +
+                een <b>button-chatbot</b> die veelgestelde vragen meteen beantwoordt.</p>
             </div>
           </article>
 
-          <!-- Stap 2 -->
+          <!-- 2 -->
           <article class="bf-step" id="step-2">
-            <button class="bf-dot" type="button"
-                    aria-controls="card-2" aria-label="Toon: Field research"></button>
+            <button class="bf-dot" type="button" aria-controls="card-2" aria-label="Toon: Field research"></button>
             <div class="bf-card" id="card-2">
               <h3>Field research</h3>
-              <p>
-                We spraken met <b>kleine bedrijven</b>. Conclusie: Brightfish is vaak
-                <b>onbekend</b> en men weet niet goed <b>hoe te starten</b>.
-              </p>
-              <p>
-                De site-flow was al simpel, dus we kozen voor een <b>button-chatbot</b> (rechtsonder)
-                die direct helpt met o.a. prijs, bereik/locaties en planning.
-              </p>
+              <p>We spraken met <b>kleine bedrijven</b>. Conclusie: Brightfish is vaak <b>onbekend</b>
+                en men weet niet goed <b>hoe te starten</b>.</p>
+              <p>De site-flow was al simpel, dus we kozen voor een <b>button-chatbot</b> (rechtsonder)
+                die direct helpt met o.a. prijs, bereik/locaties en planning.</p>
             </div>
           </article>
 
-          <!-- Stap 3 -->
+          <!-- 3 -->
           <article class="bf-step" id="step-3">
-            <button class="bf-dot" type="button"
-                    aria-controls="card-3" aria-label="Toon: UX flows"></button>
+            <button class="bf-dot" type="button" aria-controls="card-3" aria-label="Toon: UX flows"></button>
             <div class="bf-card" id="card-3">
               <h3>UX flows</h3>
               <p>Na research kozen we twee duidelijke paden:</p>
@@ -117,36 +101,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </article>
 
-          <!-- Stap 4 -->
+          <!-- 4 -->
           <article class="bf-step" id="step-4">
-            <button class="bf-dot" type="button"
-                    aria-controls="card-4" aria-label="Toon: Wireframes & prototype"></button>
+            <button class="bf-dot" type="button" aria-controls="card-4" aria-label="Toon: Wireframes & prototype"></button>
             <div class="bf-card" id="card-4">
               <h3>Wireframes & prototype</h3>
-              <p>
-                Wireframes + klikbaar prototype opgezet. De <b>logica</b> van de website uitgewerkt
-                (validatie, stappen, samenvatting) en continu <b>feedback van de klant</b> verwerkt.
-              </p>
+              <p>Wireframes + klikbaar prototype opgezet. De <b>logica</b> van de website uitgewerkt
+                (validatie, stappen, samenvatting) en continu <b>feedback van de klant</b> verwerkt.</p>
             </div>
           </article>
 
-          <!-- Stap 5 -->
+          <!-- 5 -->
           <article class="bf-step" id="step-5">
-            <button class="bf-dot" type="button"
-                    aria-controls="card-5" aria-label="Toon: Design"></button>
+            <button class="bf-dot" type="button" aria-controls="card-5" aria-label="Toon: Design"></button>
             <div class="bf-card" id="card-5">
               <h3>Design</h3>
-              <p>
-                Op basis van de <b>documenten van de klant</b> en de Brightfish-branding
-                hebben we het UI-design uitgewerkt (kleuren, typografie, componenten).
-              </p>
+              <p>Op basis van de <b>documenten van de klant</b> en de Brightfish-branding
+                hebben we het UI-design uitgewerkt (kleuren, typografie, componenten).</p>
             </div>
           </article>
 
-          <!-- Stap 6 (laatste) -->
+          <!-- 6 -->
           <article class="bf-step" id="step-6">
-            <button class="bf-dot" type="button"
-                    aria-controls="card-6" aria-label="Toon: Testen & iteraties"></button>
+            <button class="bf-dot" type="button" aria-controls="card-6" aria-label="Toon: Testen & iteraties"></button>
             <div class="bf-card" id="card-6">
               <h3>Testen & iteraties</h3>
               <p>We hebben de tool met gebruikers getest, feedback verzameld en <b>aangepast waar nodig</b>.</p>
@@ -159,7 +136,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </article>
         </section>
-        <!-- ✅ EINDE timeline -->
+        <!-- EINDE timeline -->
       </div>
     </div>
 
@@ -200,8 +177,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="foot-copy">© 2025 Samplats</div>
   </footer>
 
-  <!-- jouw scripts blijven -->
+  <!-- jouw algemene script (hamburger, glass nav, etc.) -->
   <script src="script.js"></script>
+  <!-- timeline script -->
   <script src="progress.js"></script>
 </body>
 </html>
