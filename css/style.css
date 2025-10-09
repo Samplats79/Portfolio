@@ -618,6 +618,12 @@ nav.glass {
 /* === DESKTOP (≥1025px) === */
 @media (min-width: 1025px) {
 
+  .card-actions {
+    margin-top: 20px;
+    gap: 15px;
+  }
+
+
   h1 { font-size: 48px; }
   h2 { font-size: 30px; }
 
