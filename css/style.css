@@ -246,26 +246,15 @@ nav.glass {
   background: #f6f7f9;
   padding: 18px;
   min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
 }
 
 .card-media-img img {
   width: 100%;
   display: block;
   border-radius: 12px;
-}
-
-/* Specifiek: ClosetClick - twee mockups naast elkaar, kleiner */
-.card.closetclick .card-media-img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.card.closetclick .card-media-img img {
-  width: 48%;
-  max-height: 220px;
-  object-fit: contain;
 }
 
 .card-body {
@@ -283,7 +272,8 @@ nav.glass {
 .card-actions {
   margin-top: auto;
   display: flex;
-  gap: 10px;
+  margin-top: 15px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
