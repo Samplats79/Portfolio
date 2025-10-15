@@ -398,6 +398,7 @@ nav {
   width: auto;                /* niet 100% */
   border-radius: 8px;
   font-weight: 900;
+  font-size: 15px;
   display: inline-flex;       /* mooie centrering van de tekst */
   justify-self: start;        /* ⬅️ links uitlijnen binnen de grid */         /* kleine ruimte boven, geen auto margins */
 }
