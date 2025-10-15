@@ -1,14 +1,22 @@
-/* === BASIS === */
+/* === BASIS =============================================================== */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
 
 h1, h2, h3 { margin: 0 0 14px; }
 h1 { font-size: 36px; }
 h2 { font-size: 24px; }
-.lead { color: #64748b; max-width: 52ch; }
 
-/* === NAVBAR === */
+.lead {
+  color: #64748b;
+  max-width: 52ch;
+}
+
+/* === NAVBAR ============================================================== */
 nav {
   background: #fff;
   border-bottom: 1px solid #eee;
@@ -16,16 +24,23 @@ nav {
   top: 0;
   z-index: 10;
 }
+
 .navrij {
   max-width: 1100px;
   margin: 0 auto;
   padding: 12px 20px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.ik { font-weight: 800; color: #0f172a; }
 
+.ik {
+  font-weight: 800;
+  color: #0f172a;
+}
+
+/* links */
 .navdaar a,
 .btn a,
 .card-actions a,
@@ -35,6 +50,7 @@ nav {
   text-decoration: none;
   font-weight: 700;
 }
+
 .navdaar a {
   color: #0f172a;
   margin-left: 16px;
@@ -42,6 +58,7 @@ nav {
   border-radius: 8px;
   position: relative;
 }
+
 .navdaar a::after {
   content: "";
   position: absolute;
@@ -50,18 +67,22 @@ nav {
   bottom: 4px;
   height: 2px;
   background: currentColor;
+
   transform: scaleX(0);
   transform-origin: left;
   transition: transform .18s ease;
   opacity: .7;
 }
+
 .navdaar a:hover::after,
-.navdaar a.active::after { transform: scaleX(1); }
+.navdaar a.active::after {
+  transform: scaleX(1);
+}
 
 .navdaar a.active { color: #7c3aed; }
-.navdaar a:hover { background: rgba(124, 58, 237, .08); }
+.navdaar a:hover  { background: rgba(124, 58, 237, .08); }
 
-/* === HAMBURGER === */
+/* === HAMBURGER =========================================================== */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -71,6 +92,7 @@ nav {
   padding: 4px;
   gap: 4px;
 }
+
 .hamburger span {
   width: 24px;
   height: 3px;
@@ -78,36 +100,44 @@ nav {
   border-radius: 2px;
   transition: all .3s ease;
 }
+
 .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .hamburger.active span:nth-child(2) { opacity: 0; }
 .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-/* === HERO === */
+/* === HERO ================================================================ */
 .one {
   background: linear-gradient(135deg, #fff 0%, #f4f7ff 55%, #f5efff 100%);
   border-bottom: 1px solid #eee;
   padding: 28px 20px;
 }
+
 .grid1 {
   max-width: 1100px;
   margin: 0 auto;
+
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
   text-align: center;
 }
+
 .profiel {
   width: 280px;
   height: 280px;
   margin: 0 auto;
+
   border-radius: 50%;
   background: #7c3aed;
+
   display: grid;
   place-items: center;
   overflow: hidden;
+
   perspective: 1200px;
   transform-style: preserve-3d;
 }
+
 .profiel img {
   width: 150%;
   transform: translateY(-1%);
@@ -115,7 +145,7 @@ nav {
   backface-visibility: hidden;
 }
 
-/* 🔽 Switch-afbeelding kleiner in de cirkel */
+/* switch-afbeelding kleiner */
 .profiel img[src*="switch" i] {
   width: 60%;
   height: auto;
@@ -132,6 +162,7 @@ nav {
   position: relative;
 }
 
+/* knoppen in hero */
 .btn {
   margin-top: 14px;
   display: flex;
@@ -139,14 +170,19 @@ nav {
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .btn a { border-radius: 999px; padding: 10px 16px; }
-.btnone { background: #7c3aed; color: #fff; }
+.btnone  { background: #7c3aed; color: #fff; }
 .btnone:hover { filter: brightness(.95); }
-.btntwo { border: 2px solid #7c3aed; color: #7c3aed; background: transparent; }
+.btntwo  { border: 2px solid #7c3aed; color: #7c3aed; background: transparent; }
 .btntwo:hover { background: rgba(124, 58, 237, .08); }
 
-/* === PROJECTEN (GRID + CARDS) — GELIJKE UITLIJNING === */
-.cons { max-width: 1100px; margin: 0 auto; padding: 32px 20px; }
+/* === PROJECTEN (GRID + CARDS) =========================================== */
+.cons {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
 
 .projects {
   display: grid;
@@ -158,48 +194,68 @@ nav {
 
 .card {
   height: 100%;
+
   display: flex;
   flex-direction: column;
+
   border: 1px solid #eee;
   border-radius: 16px;
   overflow: hidden;
   background: #fff;
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+
+  transition: transform .25s ease,
+              box-shadow .25s ease,
+              border-color .25s ease;
 }
+
 .card:hover {
   transform: translateY(-6px);
   box-shadow: 0 14px 30px rgba(0,0,0,.12);
   border-color: rgba(124,58,237,.25);
 }
 
+/* media */
 .card-media-img {
   background: #f6f7f9;
   padding: 18px;
   aspect-ratio: 16 / 9;
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.card-media-img img { width: 100%; display: block; border-radius: 12px; }
 
-/* body vult kaart; vaste onder-padding voor consistente witruimte */
+.card-media-img img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+/* coming soon: beeldje wat kleiner */
+.card.comingsoon .card-media-img img {
+  width: 65%;
+}
+
+/* tekstblok */
 .card-body {
   flex: 1;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   padding: 20px 18px 26px;
 }
+
 .card-body h3 { margin-bottom: 10px; }
 
-/* korte teksten krijgen ook “ruimte” zodat knoppen gelijk vallen */
 .card-body p {
   color: #64748b;
   margin: 0 0 18px 0;
   min-height: 60px;
 }
 
-/* knoppenblok */
+/* actierij */
 .card-actions {
   display: flex;
   gap: 12px;
@@ -207,23 +263,73 @@ nav {
   margin-top: auto;
 }
 
+/* === CHIP (BUTTON) ======================================================= */
 .chip {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   padding: 10px 14px;
   border-radius: 999px;
+
   border: 1px solid #e5e7eb;
   background: #fff;
   color: #0f172a;
+
   font-weight: 700;
   cursor: pointer;
-}
-.chip[aria-disabled="true"] { opacity: .5; cursor: not-allowed; }
-.chip-primary { border-color: #7c3aed; color: #7c3aed; }
-.chip-primary:hover { background: rgba(124,58,237,.08); }
 
-/* === SKILLS === */
+  transition: border-color .15s ease,
+              background .15s ease,
+              color .15s ease;
+}
+
+.chip[aria-disabled="true"] {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.chip-primary {
+  border-color: #7c3aed;
+  color: #7c3aed;
+}
+
+.chip-primary:hover {
+  background: rgba(124,58,237,.08);
+}
+
+/* CTA-variant met pijltje */
+.cta-chip {
+  position: relative;
+  padding-right: 38px;
+}
+
+.cta-chip::after {
+  content: "→";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 900;
+  transition: transform .18s ease;
+}
+
+.cta-chip:hover::after {
+  transform: translate(3px, -50%);
+}
+
+/* disabled (coming soon) */
+.is-disabled {
+  pointer-events: none;
+  color: #94a3b8;
+  border-color: #e5e7eb;
+}
+
+.is-disabled::after {
+  opacity: .35;
+}
+
+/* === SKILLS =============================================================== */
 .skillallemaal {
   display: flex;
   flex-wrap: wrap;
@@ -231,7 +337,9 @@ nav {
   justify-content: center;
   margin: 30px 0;
 }
+
 .skillallemaal span { display: inline-block; padding: 10px; }
+
 .skillallemaal img {
   width: 70px;
   height: auto;
@@ -239,26 +347,33 @@ nav {
   opacity: .5;
   transition: .3s ease;
 }
-.skillallemaal img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.05); }
 
-/* === CONTACT — LINKS UITLIJNEN & STRAK === */
+.skillallemaal img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* === CONTACT ============================================================= */
 .contact-form {
-  /* uit de “kaart”-look: geen ronde buitenrand, geen shadow */
+  /* uit de kaart-look: geen buitenrand/shadow */
   border: 0;
   border-radius: 0;
   box-shadow: none;
   background: transparent;
 
-  /* links uitlijnen binnen de sectie */
+  /* links uitlijnen */
   max-width: 720px;
-  margin: 14px 0 0;         /* ⬅️ niet centreren, dus geen auto */
+  margin: 14px 0 0;
   padding: 0;
 
   display: grid;
   gap: 14px;
 }
+
 .form-row { display: grid; gap: 6px; }
 .form-row label { font-weight: 700; color: #0f172a; }
+
 .form-row input,
 .form-row textarea {
   font: inherit;
@@ -267,6 +382,7 @@ nav {
   border-radius: 8px;
   background: #fff;
 }
+
 .form-row input:focus,
 .form-row textarea:focus {
   outline: none;
@@ -274,7 +390,7 @@ nav {
   box-shadow: 0 0 0 3px rgba(124,58,237,.15);
 }
 
-/* submit-knop: volle breedte, strakkere radius */
+/* submit */
 .contact-form .btnone {
   border: none;
   cursor: pointer;
@@ -283,87 +399,138 @@ nav {
   border-radius: 8px;
   font-weight: 700;
 }
-.contact-form .btnone:hover { filter: brightness(.95); }
 
-/* === FOOTER === */
-.container { max-width: 1100px; margin: 0 auto; padding: 32px 20px; text-align: center; }
+.contact-form .btnone:hover {
+  filter: brightness(.95);
+}
+
+/* === FOOTER ============================================================== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px;
+  text-align: center;
+}
+
 .mail { color: #7c3aed; }
-.foot { background: #0f172a; color: #fff; padding: 36px 20px 12px; }
+
+.foot {
+  background: #0f172a;
+  color: #fff;
+  padding: 36px 20px 12px;
+}
+
 .footwrap {
   max-width: 1100px;
   margin: 0 auto;
+
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
   text-align: center;
 }
+
 .foot-left h3 { margin: 0 0 6px; font-size: 20px; }
-.foot-left p { margin: 0; color: #cbd5e1; }
+.foot-left p  { margin: 0; color: #cbd5e1; }
+
 .foot-right { text-align: center; }
-.foot-mail { display: inline-block; color: #7c3aed; font-weight: 700; margin-bottom: 8px; }
-.foot-links a { color: #e2e8f0; margin: 0 8px; font-weight: 600; }
+
+.foot-mail {
+  display: inline-block;
+  color: #7c3aed;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.foot-links a {
+  color: #e2e8f0;
+  margin: 0 8px;
+  font-weight: 600;
+}
+
 .foot-links a:hover { color: #fff; }
+
 .foot-copy {
   max-width: 1100px;
   margin: 18px auto 0;
   padding-top: 10px;
+
   border-top: 1px solid rgba(255,255,255,.12);
   color: #94a3b8;
   font-size: 14px;
   text-align: center;
 }
 
-/* === RESPONSIVE === */
+/* === RESPONSIVE ========================================================== */
 @media (max-width: 640px) {
   .hamburger { display: flex; position: relative; z-index: 1001; }
 
   .navdaar {
     position: fixed;
     inset: 0;
+
     background: rgba(255,255,255,.98);
     backdrop-filter: blur(10px);
+
     padding: 80px 20px 20px;
+
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
+
     transition: all .3s ease;
     z-index: 1000;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     pointer-events: none;
     margin: 0;
     max-width: none;
   }
+
   .navdaar.active {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
   }
+
   .navdaar a {
     display: block;
     margin: 0 0 20px 0;
     padding: 16px 24px;
+
     text-align: center;
     border-radius: 12px;
+
     font-size: 18px;
     font-weight: 600;
     width: 200px;
+
     color: #0f172a;
   }
-  .navdaar a:hover { background: rgba(124,58,237,.08) }
+
+  .navdaar a:hover  { background: rgba(124,58,237,.08) }
   .navdaar a.active { color: #7c3aed; }
 }
 
 @media (min-width: 641px) {
   h1 { font-size: 44px; }
   h2 { font-size: 28px; }
-  .grid1 { grid-template-columns: 1fr 1.2fr; gap: 32px; text-align: left; }
+
+  .grid1 {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 32px;
+    text-align: left;
+  }
+
   .profiel { width: 320px; height: 320px; margin: 0; }
   .btn { justify-content: flex-start; }
   .projects { grid-template-columns: repeat(2, minmax(260px, 1fr)); }
+
   .footwrap { grid-template-columns: 1fr 1fr; text-align: left; }
   .foot-right { text-align: right; }
 }
@@ -373,33 +540,59 @@ nav {
   h2 { font-size: 30px; }
   .grid1 { gap: 40px; }
   .profiel { width: 360px; height: 360px; }
+
   .cons { max-width: 1280px; }
-  .projects { grid-template-columns: repeat(3, minmax(280px, 1fr)); gap: 28px; }
+  .projects {
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    gap: 28px;
+  }
+
   .card { min-height: 420px; }
+
   .skillallemaal { gap: 85px; }
   .skillallemaal img { width: 95px; }
 }
 
-/* === H1 LETTER-ANIMATIE === */
-#namee { display: inline-block; white-space: pre-wrap; --stagger: 60ms; --start: .50s; }
+/* === H1 LETTER-ANIMATIE ================================================== */
+#namee {
+  display: inline-block;
+  white-space: pre-wrap;
+
+  --stagger: 60ms;
+  --start: .50s;
+}
+
 #namee .highlight { white-space: nowrap; border-radius: 6px; }
+
 #namee .char {
   display: inline-block;
   opacity: 0;
   transform: translateY(10px);
+
   animation: nameRise .40s cubic-bezier(.22,.61,.36,1) forwards;
   animation-delay: calc(var(--start) + var(--i) * var(--stagger));
 }
-@keyframes nameRise { 60% { transform: translateY(-1px); } 100% { opacity: 1; transform: translateY(0); } }
+
+@keyframes nameRise {
+  60%  { transform: translateY(-1px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   #namee .char { animation: none; opacity: 1; transform: none; }
 }
 
-/* === PROFIELFOTO FLIP === */
-.profiel.pf-anim { animation: pfFlipLR .6s cubic-bezier(.22,.61,.36,1) both; }
+/* === PROFIELFOTO FLIP ==================================================== */
+.profiel.pf-anim {
+  animation: pfFlipLR .6s cubic-bezier(.22,.61,.36,1) both;
+}
+
 @keyframes pfFlipLR {
   0%   { transform: rotateY(0deg)   scale(1.00); }
   50%  { transform: rotateY(90deg)  scale(0.985); }
   100% { transform: rotateY(180deg) scale(1.00); }
 }
-@media (prefers-reduced-motion: reduce) { .profiel.pf-anim { animation: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .profiel.pf-anim { animation: none; }
+}
