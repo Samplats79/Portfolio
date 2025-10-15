@@ -394,10 +394,12 @@ nav {
 .contact-form .btnone {
   border: none;
   cursor: pointer;
-  padding: 14px 18px;
-  width: 100%;
+  padding: 14px 28px;
+  width: auto;                /* niet 100% */
   border-radius: 8px;
   font-weight: 700;
+  display: inline-flex;       /* mooie centrering van de tekst */
+  justify-self: start;        /* ⬅️ links uitlijnen binnen de grid */         /* kleine ruimte boven, geen auto margins */
 }
 
 .contact-form .btnone:hover {

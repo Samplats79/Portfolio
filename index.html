@@ -174,15 +174,23 @@
       of gebruik het formulier.
     </p>
 
-    <form class="contact-form" action="https://formspree.io/f/your_form_id" method="POST">
+    <!-- ✅ Formspree actief -->
+    <form class="contact-form" action="https://formspree.io/f/xwpraoan" method="POST">
+      <!-- honeypot (anti-spam) -->
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
+      <!-- optioneel: onderwerp dat jij ontvangt -->
+      <input type="hidden" name="_subject" value="Nieuw bericht via Samplats.be">
+
       <div class="form-row">
         <label for="email">E-mail</label>
         <input type="email" id="email" name="email" autocomplete="email" placeholder="jij@voorbeeld.com" required>
       </div>
+
       <div class="form-row">
         <label for="message">Bericht</label>
         <textarea id="message" name="message" rows="4" placeholder="Kort en krachtig 👌" required></textarea>
       </div>
+
       <button type="submit" class="btnone">Verstuur</button>
     </form>
   </section>
