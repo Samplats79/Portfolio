@@ -226,14 +226,14 @@ nav {
 }
 
 .card-media-img img {
-  width: 100%;
+  width: 80%;
   display: block;
   border-radius: 12px;
 }
 
 /* coming soon: beeldje wat kleiner */
 .card.comingsoon .card-media-img img {
-  width: 65%;
+  width: 55%;
 }
 
 /* tekstblok */
