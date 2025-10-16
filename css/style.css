@@ -599,3 +599,52 @@ nav {
 @media (prefers-reduced-motion: reduce) {
   .profiel.pf-anim { animation: none; }
 }
+
+.skillallemaal { gap: 22px; }                
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+}
+.skill img {
+  width: 70px; height: auto;
+  filter: grayscale(100%); opacity: .5;
+  transition: .3s ease;
+}
+
+.skill .bar {
+  width: 110px;
+  height: 8px;
+  background: #e5e7eb;         
+  border-radius: 999px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+.skill .bar .fill {
+  display: block;
+  height: 100%;
+  width: 0;                     
+  background: linear-gradient(90deg, #7c3aed, #8b5cf6);
+  transition: width .55s cubic-bezier(.22,.61,.36,1);
+}
+.skill .tag {
+  font-size: 12px;
+  font-weight: 700;
+  color: #7c3aed;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.skill:hover img { filter: grayscale(0%); opacity: 1; transform: scale(1.05); }
+.skill:hover .bar   { opacity: 1; transform: translateY(0); }
+.skill:hover .bar .fill { width: var(--pct, 0%); }
+.skill:hover .tag   { opacity: .95; }
+
+@media (min-width: 1025px) {
+  .skill img { width: 95px; }
+  .skill .bar { width: 140px; }
+}
