@@ -27,6 +27,128 @@ nav.glass{
 .dets img{ width: 100%; display: block; border-radius: 16px; background: #f6f7f9; box-shadow: 0 6px 18px rgba(0,0,0,.08); }
 .dets > img{ align-self: start; }
 
+/* ============== FLOWS KIEZEN (GSM) ============== */
+.bf-flows{
+  margin-top: 26px;
+  padding-top: 6px;
+}
+
+.bf-flows h2{
+  font-size: 24px;
+  text-align: center;
+  margin: 0 0 6px;
+}
+
+.bf-flows_intro{
+  margin: 0 0 14px;
+  color: #64748b;
+  text-align: center;
+}
+
+.bf-flow-chooser{
+  margin: 0 auto 14px;
+  max-width: 640px;
+}
+
+.bf-flow-chooser img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  background: #f6f7f9;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  border: 1px solid #eee;
+}
+
+/* labelrij met "Flow 1" links en "Flow 2" rechts */
+.bf-flow-labels{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 6px 0 10px;
+  font-weight: 800;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  font-size: 12px;
+}
+.bf-flow-labels span:first-child{ text-align: left; }
+.bf-flow-labels span:last-child{ text-align: right; }
+
+/* twee kolommen; elke kolom bevat de volledige flow onder elkaar */
+.bf-flow-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+/* NIEUW: stapel screenshots per flow */
+.bf-col{
+  display: grid;
+  gap: 50px;
+}
+
+.bf-flow-item{ margin: 0; }
+
+/* images in items en in kolommen */
+.bf-flow-item img,
+.bf-col img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  background: #f6f7f9;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  border: 1px solid #eee;
+}
+
+/* --- gelijkmatige rijen voor Flow 1 & 2 --- */
+.bf-flow-item{
+  aspect-ratio: 16 / 9;   /* evt. 5/3 of 4/3 proberen */
+  margin: 0;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  padding: 6px;
+}
+
+.bf-flow-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f6f7f9;
+  border: 0;
+  box-shadow: none;
+}
+
+.bf-flow-grid{ gap: 18px 16px; }
+.bf-col{ gap: 18px; }
+
+/* optioneel: kleine offset voor rechter kolom */
+/* .bf-col:nth-child(2){ margin-top: 8px; } */
+
+/* video onder flows - netjes gecentreerd */
+.bf-flow-video{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bf-flow-video video{
+  width: 80%;
+  max-width: 900px;
+  border-radius: 16px;
+  background: #000;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+
+
+
+
 /* knoppen */
 .btn{ margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; }
 .btnone, .btntwo{ text-decoration: none; font-weight: 700; border-radius: 999px; padding: 10px 16px; display:inline-block; }
@@ -189,6 +311,10 @@ nav.glass{
 .bf-step.active .bf-dot{
   background:#7c3aed;
   box-shadow: 0 0 0 4px rgba(124,58,237,.18);
+}
+
+.bf-flow-video {
+    margin-bottom: 80px;
 }
 
 /* desktop spacing voor timeline */
