@@ -64,7 +64,6 @@ nav.glass{
 .bf-flow-labels{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
   margin: 6px 0 10px;
   font-weight: 800;
   color: #0f172a;
@@ -79,49 +78,37 @@ nav.glass{
 .bf-flow-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
   align-items: start;
 }
 
 /* NIEUW: stapel screenshots per flow */
 .bf-col{
   display: grid;
-  gap: 50px;
 }
 
 .bf-flow-item{ margin: 0; }
 
 /* images in items en in kolommen */
-.bf-flow-item img,
-.bf-col img{
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-  background: #f6f7f9;
-  box-shadow: 0 6px 18px rgba(0,0,0,.08);
-  border: 1px solid #eee;
-}
-
 /* --- gelijkmatige rijen voor Flow 1 & 2 --- */
-.bf-flow-item{
-  aspect-ratio: 16 / 9;   /* evt. 5/3 of 4/3 proberen */
+.bf-flow-item {
+  aspect-ratio: 20 / 12;
   margin: 0;
   border-radius: 12px;
   background: #fff;
   border: 1px solid #eee;
   box-shadow: 0 6px 18px rgba(0,0,0,.08);
   padding: 6px;
+  display: flex;              /* centreren */
+  align-items: center;
+  justify-content: center;
 }
 
 .bf-flow-item img{
-  width: 100%;
-  height: 100%;
+  width: 75%;
+  height: 75%;
   object-fit: contain;
   border-radius: 8px;
   background: #f6f7f9;
-  border: 0;
-  box-shadow: none;
 }
 
 .bf-flow-grid{ gap: 18px 16px; }
