@@ -1,148 +1,283 @@
 <!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OnexD Tracker – Details | Samplats</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Basis styles + tracker styles -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/tracker.css">
+  <!-- Title -->
+  <title>Tracker App | Samplats</title>
 
-  <!-- Favicons -->
-  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
+  <!-- SEO -->
+  <link rel="canonical" href="https://portfoliosamplats.vercel.app/tracker.html">
+  <meta name="description" content="Portfolio van Samplats. Frontend developer gespecialiseerd in moderne webapps, UI design en gebruiksvriendelijke interfaces.">
+
+  <!-- Open Graph (BELANGRIJK VOOR LINK PREVIEW) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Samplats — Portfolio">
+  <meta property="og:locale" content="nl_BE">
+  <meta property="og:url" content="https://portfoliosamplats.vercel.app/tracker.html">
+  <meta property="og:title" content="Samplats — Frontend Developer">
+  <meta property="og:description" content="Bekijk mijn portfolio met webprojecten, UI design en development.">
+  
+  <!-- 🔥 JOUW BANNER -->
+  <meta property="og:image" content="https://portfoliosamplats.vercel.app/images/Banner.png">
+  <meta property="og:image:secure_url" content="https://portfoliosamplats.vercel.app/images/Banner.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Samplats portfolio banner">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Samplats — Frontend Developer">
+  <meta name="twitter:description" content="Bekijk mijn portfolio met webprojecten en UI design.">
+  <meta name="twitter:image" content="https://portfoliosamplats.vercel.app/images/Banner.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/faviconn.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="images/faviconn.svg" type="image/svg+xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500;600&display=swap">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="tracker.css">
 
   <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-WLTCC895');</script>
-  <!-- End Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),
+          dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WLTCC895');
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
 </head>
 <body>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLTCC895" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
 
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLTCC895"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <div class="noise"></div>
 
-  <nav>
-    <div class="navrij">
-      <a class="ik" href="index.html">← Samplats</a>
-      <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="menu">
-        <span></span><span></span><span></span>
+  <div class="court-lines">
+    <div class="court-line cl-1"></div>
+    <div class="court-line cl-2"></div>
+    <div class="court-line cl-3"></div>
+    <div class="arc"></div>
+    <div class="center-dot"></div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="index.html#home" class="logo">
+        <span class="logo-bracket"></span>SAM<span class="logo-accent">PLATS</span><span class="logo-bracket"></span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <div class="nav-dropdown">
+          <a href="index.html#home" class="nav-link"><span class="nav-num">00</span>Home</a>
+          <a href="index.html#about" class="nav-link"><span class="nav-num">01</span>Over mij</a>
+          <a href="index.html#projects" class="nav-link"><span class="nav-num">02</span>Projecten</a>
+          <a href="index.html#skills" class="nav-link"><span class="nav-num">03</span>Skills</a>
+          <a href="index.html#contact" class="nav-link"><span class="nav-num">04</span>Contact</a>
+        </div>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
-      <div class="navdaar" id="menu">
-        <a href="index.html#top">Home</a>
-        <a href="index.html#projecten">Projecten</a>
-        <a href="index.html#contact">Contact</a>
-      </div>
     </div>
-  </nav>
+  </header>
 
-  <main class="det">
-    <div class="dets">
-      <img src="images/tracker.svg" alt="OnexD Tracker interface">
-      <div>
-        <h1>OnexD Tracker – LocalStorage webapp</h1>
-       <p class="boven">
-  Lichte tracking-app waar je eigen data (bv. gewoonten of activiteiten) kan toevoegen,
-  bewerken en verwijderen. Alles wordt lokaal bewaard met <b>local Storage</b>
-  (dat wil zeggen dat je gegevens veilig op je eigen toestel worden opgeslagen)
-  en automatisch terug ingeladen bij het openen.
-</p>
-
-        <div class="btn">
-          <a class="btnone" href="https://1xd-tracker.vercel.app/" target="_blank" rel="noopener">Live demo</a>
-          <a class="btntwo" href="index.html#projecten">Terug naar projecten</a>
+  <main>
+    <section class="tr-hero">
+      <div class="container">
+        <div class="tr-back-wrap">
+          <a href="index.html#projects" class="tr-back-link">← Terug naar projecten</a>
         </div>
 
-        <!-- Timeline (zelfde markup/klassen als Brightfish) -->
-        <section class="bf-timeline" id="bfTimeline" aria-label="Projectstappen">
-          <div class="bf-track" aria-hidden="true">
-            <span class="bf-track__bg"></span>
-            <span class="bf-track__fill" id="bfFill"></span>
+        <div class="tr-hero-grid">
+          <div class="tr-hero-content">
+            <p class="tr-kicker">Project detail — Web App</p>
+            <h1 class="tr-title">TRACKER<br><em>App</em></h1>
+            <p class="tr-lead">
+              Een lichte webapp waarmee gebruikers eigen gegevens, gewoonten of activiteiten kunnen toevoegen, aanpassen en verwijderen. Alles wordt lokaal opgeslagen met localStorage zodat de data automatisch bewaard blijft.
+            </p>
+
+            <div class="tr-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>LocalStorage</span>
+            </div>
+
+            <div class="tr-actions">
+              <a href="https://1xd-tracker.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">
+                <span>Bekijk live demo</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tr-summary">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label"><span>01</span> Over het project</p>
+          <h2 class="section-title">HET<br><em>concept</em></h2>
+        </div>
+
+        <div class="tr-summary-grid">
+          <div class="tr-panel">
+            <h3>Doel</h3>
+            <p>
+              Een snelle en toegankelijke app maken waarmee gebruikers eigen items kunnen beheren zonder account of backend.
+            </p>
           </div>
 
-          <!-- Stap 1 -->
-          <article class="bf-step" id="tr-step-1">
-            <button class="bf-dot" type="button" aria-controls="tr-card-1" aria-label="Toon: Probleem & doel"></button>
-            <div class="bf-card" id="tr-card-1">
+          <div class="tr-panel">
+            <h3>Oplossing</h3>
+            <p>
+              De app laat gebruikers toe om data toe te voegen, te bewerken en te verwijderen in een eenvoudige interface met directe feedback.
+            </p>
+          </div>
+
+          <div class="tr-panel">
+            <h3>Mijn rol</h3>
+            <p>
+              Ik werkte aan de volledige frontend-opbouw, de interacties, de visuele structuur en de koppeling met localStorage.
+            </p>
+          </div>
+
+          <div class="tr-panel">
+            <h3>Belangrijkste features</h3>
+            <p>
+              Data toevoegen, items aanpassen, verwijderen en automatisch opslaan en opnieuw laden via localStorage.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tr-process-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label"><span>02</span> Proces</p>
+          <h2 class="section-title">VAN IDEE<br><em>tot app</em></h2>
+        </div>
+
+        <div class="tr-timeline">
+          <article class="tr-step-card">
+            <div class="tr-step-number">01</div>
+            <div class="tr-step-content">
               <h3>Probleem & doel</h3>
               <p>
-                Een snelle, vriendelijke webapp om eigen items te <b>toevoegen</b>,
-                <b>bewerken</b> en <b>verwijderen</b>, zonder account of backend.
+                Het doel was een eenvoudige tracking-app te maken waarin gebruikers snel items kunnen toevoegen en beheren, zonder ingewikkelde setup.
               </p>
             </div>
           </article>
 
-          <!-- Stap 2 -->
-          <article class="bf-step" id="tr-step-2">
-            <button class="bf-dot" type="button" aria-controls="tr-card-2" aria-label="Toon: Kernfeatures"></button>
-            <div class="bf-card" id="tr-card-2">
+          <article class="tr-step-card">
+            <div class="tr-step-number">02</div>
+            <div class="tr-step-content">
               <h3>Kernfeatures</h3>
-              <ul>
-                <li>Items met titel / waarde / datum.</li>
-                <li>Inline edit & delete.</li>
-                <li>Automatisch bewaren in <code>localStorage</code>.</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- Stap 3 -->
-          <article class="bf-step" id="tr-step-3">
-            <button class="bf-dot" type="button" aria-controls="tr-card-3" aria-label="Toon: Tech & performance"></button>
-            <div class="bf-card" id="tr-card-3">
-              <h3>Tech & performance</h3>
               <p>
-                <b>Vanilla JS</b> + <b>localStorage</b> voor persistente data. Mobile-first UI, weinig JS,
-                snelle laadtijden.
+                De app ondersteunt toevoegen, bewerken en verwijderen van data, samen met automatisch opslaan in localStorage voor een vlotte ervaring.
               </p>
             </div>
           </article>
-        </section>
-        <!-- EINDE timeline -->
+
+          <article class="tr-step-card">
+            <div class="tr-step-number">03</div>
+            <div class="tr-step-content">
+              <h3>Techniek</h3>
+              <p>
+                De applicatie is gebouwd met vanilla JavaScript en localStorage. Zo blijft de app licht, snel en volledig client-side werken.
+              </p>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
-
-    <section class="lijn">
-      <article class="lijn2">
-        <h3>Wat trackt de app?</h3>
-        <ul>
-          <li>Items met titel/waarde/datum toevoegen</li>
-          <li>Items bijwerken of verwijderen</li>
-          <li>Automatisch bewaren & ophalen via <code>localStorage</code></li>
-        </ul>
-      </article>
-
-      <article class="lijn2">
-        <h3>Techniek</h3>
-        <ul>
-          <li>Persistente opslag: <code>localStorage</code></li>
-        </ul>
-      </article>
     </section>
   </main>
 
-  <footer class="foot">
-    <div class="footwrap">
-      <div class="foot-left">
-        <h3>Samplats</h3>
-        <p>Frontend developer & coach. Samen iets moois maken?</p>
-      </div>
-      <div class="foot-right">
-         <div class="foot-links">
-          <a href="index.html#projecten">Projecten</a>
-          <a href="index.html#contact">Contact</a>
-        </div>
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <a href="index.html#home" class="footer-logo">
+        <span class="logo-bracket"></span>SAM<span class="logo-accent">PLATS</span><span class="logo-bracket"></span>
+      </a>
+      <p class="footer-copy">© 2026 Samplats. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#projects">Projecten</a>
+        <a href="index.html#contact">Contact</a>
       </div>
     </div>
-    <div class="foot-copy">© 2025 Samplats</div>
   </footer>
 
-  <script src="script.js"></script>
-  <script src="prs.js"></script>
+  <script>
+    const header = document.getElementById('siteHeader');
+    const toggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navMenu.classList.toggle('active');
+      toggle.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', navMenu.classList.contains('active') ? 'true' : 'false');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !toggle.contains(e.target)) {
+        navMenu.classList.remove('active');
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 820) {
+        navMenu.classList.remove('active');
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
 </body>
 </html>

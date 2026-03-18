@@ -1,260 +1,411 @@
 <!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Brightfish – Details | Samplats</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Basis styles + pagina styles -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/bright.css">
+  <title>Brightfish Campagnecalculator | Samplats</title>
 
-  <!-- Favicons (zelfde als index) -->
-  <link rel="icon" href="images/favicon.svg" type="image/png">
-  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://portfoliosamplats.vercel.app/brightfish.html">
+  <meta name="description" content="Projectpagina van de Brightfish Campagnecalculator, uitgewerkt door Samplats als frontend developer met focus op UX, structuur en een professionele digitale flow.">
 
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-WLTCC895');</script>
-  <!-- End Google Tag Manager -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Samplats — Portfolio">
+  <meta property="og:locale" content="nl_BE">
+  <meta property="og:url" content="https://portfoliosamplats.vercel.app/brightfish.html">
+  <meta property="og:title" content="Brightfish Campagnecalculator | Samplats">
+  <meta property="og:description" content="Projectdetail van de Brightfish Campagnecalculator: research, UX flows, wireframes, design en testing.">
+  <meta property="og:image" content="https://portfoliosamplats.vercel.app/images/Banner.png">
+  <meta property="og:image:secure_url" content="https://portfoliosamplats.vercel.app/images/Banner.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Brightfish projectpagina van Samplats">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Brightfish Campagnecalculator | Samplats">
+  <meta name="twitter:description" content="Projectdetail van de Brightfish Campagnecalculator door Samplats.">
+  <meta name="twitter:image" content="https://portfoliosamplats.vercel.app/images/Banner.png">
+  <meta name="twitter:image:alt" content="Brightfish projectpagina van Samplats">
+
+  <link rel="icon" href="images/faviconn.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="images/faviconn.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500;600&display=swap">
+
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="brightfish.css">
+
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),
+          dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WLTCC895');
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
 </head>
-
 <body>
-  <!-- GTM (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLTCC895"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End GTM (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLTCC895" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
 
-  <nav>
-    <div class="navrij">
-      <a class="ik" href="index.html">← Samplats</a>
-      <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="menu">
-        <span></span><span></span><span></span>
+  <div class="noise"></div>
+
+  <div class="court-lines">
+    <div class="court-line cl-1"></div>
+    <div class="court-line cl-2"></div>
+    <div class="court-line cl-3"></div>
+    <div class="arc"></div>
+    <div class="center-dot"></div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="index.html#home" class="logo">
+        <span class="logo-bracket"></span>SAM<span class="logo-accent">PLATS</span><span class="logo-bracket"></span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <div class="nav-dropdown">
+          <a href="index.html#home" class="nav-link"><span class="nav-num">00</span>Home</a>
+          <a href="index.html#about" class="nav-link"><span class="nav-num">01</span>Over mij</a>
+          <a href="index.html#projects" class="nav-link"><span class="nav-num">02</span>Projecten</a>
+          <a href="index.html#skills" class="nav-link"><span class="nav-num">03</span>Skills</a>
+          <a href="index.html#contact" class="nav-link"><span class="nav-num">04</span>Contact</a>
+        </div>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
-      <div class="navdaar" id="menu">
-        <a href="index.html#top">Home</a>
-        <a href="index.html#projecten">Projecten</a>
-        <a href="index.html#contact">Contact</a>
-      </div>
     </div>
-  </nav>
+  </header>
 
-  <main class="det">
-    <div class="dets">
-      <img src="images/Vector(4).svg" alt="Brightfish logo">
-      <div>
-        <h1>Brightfish – Campagnecalculator</h1>
-        <p class="boven">
-          Schoolopdracht: webtool die een <b>budgetvoorstel</b> maakt voor bioscoopcampagnes.
-          De gebruiker kiest periode, locaties en formaten; de tool rekent alles uit en geeft een samenvatting.
-        </p>
-
-        <div class="btn">
-          <a class="btntwo" href="index.html#projecten">Terug naar projecten</a>
+  <main>
+    <section class="bf-hero">
+      <div class="container">
+        <div class="bf-back-wrap">
+          <a href="index.html#projects" class="bf-back-link">← Terug naar projecten</a>
         </div>
 
-        <!-- Timeline -->
-        <section class="bf-timeline" id="bfTimeline" aria-label="Projectstappen">
-          <div class="bf-track" aria-hidden="true">
-            <span class="bf-track__bg"></span>
-            <span class="bf-track__fill" id="bfFill"></span>
+        <div class="bf-hero-grid">
+          <div class="bf-hero-content">
+            <p class="bf-kicker">Project detail — Web Tool</p>
+            <h1 class="bf-title">BRIGHTFISH<br><em>Campagnecalculator</em></h1>
+            <p class="bf-lead">
+              Een schoolopdracht waarin ik werkte aan een interactieve tool voor bioscoopcampagnes. De gebruiker kiest periode, locaties en advertentieformaten, waarna de tool een duidelijk budgetvoorstel en samenvatting genereert.
+            </p>
+
+            <div class="bf-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>UX Flow</span>
+              <span>Figma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bf-summary">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label"><span>01</span> Over het project</p>
+          <h2 class="section-title">HET<br><em>concept</em></h2>
+        </div>
+
+        <div class="bf-summary-grid">
+          <div class="bf-panel">
+            <h3>Doel</h3>
+            <p>
+              Kleine bedrijven willen adverteren, maar weten vaak niet hoe ze moeten beginnen en denken dat bioscoopreclame te duur is. Daarom moest deze tool het proces eenvoudiger, sneller en duidelijker maken.
+            </p>
           </div>
 
-          <!-- 1 -->
-          <article class="bf-step" id="step-1">
-            <button class="bf-dot" type="button" aria-controls="card-1" aria-label="Toon: Probleem"></button>
-            <div class="bf-card" id="card-1">
-              <h3>Probleem</h3>
-              <p><b>Kleine bedrijven</b> willen adverteren, maar weten niet hoe ze moeten starten
-                en denken dat het <b>duur</b> is. Daardoor krijgt Brightfish vaak dezelfde vragen.</p>
-              <p>Oplossing: een <b>campagnecalculator</b> voor snelle prijsinschatting +
-                een <b>button-chatbot</b> die veelgestelde vragen meteen beantwoordt.</p>
-            </div>
-          </article>
+          <div class="bf-panel">
+            <h3>Oplossing</h3>
+            <p>
+              De campagnecalculator geeft gebruikers een eenvoudige manier om keuzes te maken, prijzen te begrijpen en een overzichtelijk voorstel te krijgen. Daarnaast werd een button-chatbot voorzien voor veelgestelde vragen.
+            </p>
+          </div>
 
-          <!-- 2 -->
-          <article class="bf-step" id="step-2">
-            <button class="bf-dot" type="button" aria-controls="card-2" aria-label="Toon: Field research"></button>
-            <div class="bf-card" id="card-2">
-              <h3>Field research</h3>
-              <p>We spraken met <b>kleine bedrijven</b>. Conclusie: Brightfish is vaak <b>onbekend</b>
-                en men weet niet goed <b>hoe te starten</b>.</p>
-              <p>De site-flow was al simpel, dus we kozen voor een <b>button-chatbot</b> (rechtsonder)
-                die direct helpt met o.a. prijs, bereik/locaties en planning.</p>
-            </div>
-          </article>
+          <div class="bf-panel">
+            <h3>Mijn rol</h3>
+            <p>
+              Ik werkte mee aan frontend development, UX flows in Figma, visuele structuur, schermopbouw en het verfijnen van de gebruikerservaring.
+            </p>
+          </div>
 
-          <!-- 3 -->
-          <article class="bf-step" id="step-3">
-            <button class="bf-dot" type="button" aria-controls="card-3" aria-label="Toon: UX flows"></button>
-            <div class="bf-card" id="card-3">
-              <h3>UX flows</h3>
-              <p>Na research kozen we twee duidelijke paden:</p>
-              <ul>
-                <li><b>Based on campaign</b> – starten met film/genre/slot → berekening.</li>
-                <li><b>Based on budget</b> – starten met bedrag → opties op maat.</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- 4 -->
-          <article class="bf-step" id="step-4">
-            <button class="bf-dot" type="button" aria-controls="card-4" aria-label="Toon: Wireframes & prototype"></button>
-            <div class="bf-card" id="card-4">
-              <h3>Wireframes & prototype</h3>
-              <p>Wireframes + klikbaar prototype opgezet. De <b>logica</b> van de website uitgewerkt
-                (validatie, stappen, samenvatting) en continu <b>feedback van de klant</b> verwerkt.</p>
-            </div>
-          </article>
-
-          <!-- 5 -->
-          <article class="bf-step" id="step-5">
-            <button class="bf-dot" type="button" aria-controls="card-5" aria-label="Toon: Design"></button>
-            <div class="bf-card" id="card-5">
-              <h3>Design</h3>
-              <p>Op basis van de <b>documenten van de klant</b> en de Brightfish-branding
-                hebben we het UI-design uitgewerkt (kleuren, typografie, componenten).</p>
-            </div>
-          </article>
-
-          <!-- 6 -->
-          <article class="bf-step" id="step-6">
-            <button class="bf-dot" type="button" aria-controls="card-6" aria-label="Toon: Testen & iteraties"></button>
-            <div class="bf-card" id="card-6">
-              <h3>Testen & iteraties</h3>
-              <p>We hebben de tool met gebruikers getest, feedback verzameld en <b>aangepast waar nodig</b>.</p>
-              <ul>
-                <li>Duidelijkere teksten en labels.</li>
-                <li>Knoppen/volgorde aangescherpt.</li>
-                <li>Kleine bugs gefixt en performance verbeterd.</li>
-              </ul>
-              <p>Resultaat: soepelere flow en minder vragen.</p>
-            </div>
-          </article>
-        </section>
-        <!-- EINDE timeline -->
-      </div>
-    </div>
-
-    <!-- FLOWS KIEZEN -->
-    <section class="bf-flows" aria-labelledby="flowsTitle">
-      <h2 id="flowsTitle">Flows kiezen</h2>
-      <p class="bf-flows_intro">Kies je pad: <b>Flow&nbsp;1</b> of <b>Flow&nbsp;2</b>. Eerst het keuzescherm, daaronder elke flow onder elkaar.</p>
-
-      <!-- Keuzescherm (centraal) -->
-      <figure class="bf-flow-chooser">
-        <img src="images/flows%20kiezen.png" alt="Keuzescherm: flow kiezen" loading="lazy">
-      </figure>
-
-      <!-- Labelrij -->
-      <div class="bf-flow-labels" aria-hidden="true">
-        <span>Campaign</span>
-        <span>Budget</span>
-      </div>
-
-      <!-- Twee kolommen: links alle stappen van Flow 1, rechts alle stappen van Flow 2 -->
-      <div class="bf-flow-grid">
-        <!-- FLOW 1 (linkerkolom) -->
-        <div class="bf-col">
-          <figure class="bf-flow-item">
-            <img src="images/flow target adience 1&2.png" alt="Flow 1 – selecteer advertentie" loading="lazy">
-          </figure>
-          <figure class="bf-flow-item">
-            <img src="images/flow choose movie 1&2.png" alt="Flow 1 – doelgroep kiezen" loading="lazy">
-          </figure>
-          <figure class="bf-flow-item">
-            <img src="images/flow location 1&2.png " alt="Flow 1 – mission kiezen" loading="lazy">
-          </figure>
-          <figure class="bf-flow-item">
-            <img src="images/flow select ad 1&2.png" alt="Flow 1 – samenvatting" loading="lazy">
-          </figure>
-          <figure class="bf-flow-item">
-            <img src="images/flow advanced option 1&2.png" alt="Flow 1 – samenvatting" loading="lazy">
-          </figure>
-           <figure class="bf-flow-item">
-            <img src="images/flow budget proposel 1.png" alt="Flow 1 – samenvatting" loading="lazy">
-          </figure>
-           <figure class="bf-flow-item">
-            <img src="images/flow samenvatting 1.png" alt="Flow 1 – samenvatting" loading="lazy">
-          </figure>
-        </div>
-
-        <!-- FLOW 2 (rechterkolom) -->
-        <div class="bf-col">
-          <figure class="bf-flow-item">
-            <img src="images/flow%20budget%20kiezen%202%20screen1.png" alt="Flow 2 – budget kiezen" loading="lazy">
-          </figure>
-          <figure class="bf-flow-item">
-            <img src="images/flow target adience 1&2.png" alt="Flow 2 – budget voorstel" loading="lazy">
-          </figure>
-          <figure class="bf-flow-item">
-            <img src="images/flow choose movie 1&2.png" alt="Flow 2 – voorstellen" loading="lazy">
-          </figure>
-          <figure class="bf-flow-item">
-            <img src="images/flow location 1&2.png " alt="Flow 2 – samenvatting" loading="lazy">
-          </figure>
-          <figure class="bf-flow-item">
-            <img src="images/flow advanced option 1&2.png" alt="Flow 2 – samenvatting" loading="lazy">
-          </figure>
-          <figure class="bf-flow-item">
-            <img src="images/flow samenvatting2.png " alt="Flow 2 – samenvatting" loading="lazy">
-          </figure>
+          <div class="bf-panel">
+            <h3>Belangrijkste features</h3>
+            <p>
+              Keuzes voor periode, locaties en formaten, een duidelijke flow, samenvatting van keuzes, ondersteunende chatbot en een responsieve interface.
+            </p>
+          </div>
         </div>
       </div>
-
-      <!-- VIDEO ONDER FLOWS -->
-<div class="bf-flow-video">
-  <video controls>
-    <source src="images/flow chatbot 1 en 2 .mp4" type="video/mp4">
-    Je browser ondersteunt deze video niet.
-  </video>
-</div>
-
     </section>
-    <!-- EINDE FLOWS KIEZEN -->
 
-    <section class="lijn">
-      <article class="lijn2">
-        <h3>Mijn rol</h3>
-        <ul>
-          <li>Front-end</li>
-          <li>UX flows in Figma</li>
-        </ul>
-      </article>
+    <section class="section bf-timeline-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label"><span>02</span> Proces</p>
+          <h2 class="section-title">VAN IDEE<br><em>tot flow</em></h2>
+        </div>
 
-      <article class="lijn2">
-        <h3>Belangrijkste features</h3>
-        <ul>
-          <li>Keuzes (periode, locaties, formaten)</li>
-          <li>Chatbot + samenvatting</li>
-          <li>Responsief en toegankelijk</li>
-        </ul>
-      </article>
+        <div class="bf-timeline">
+          <article class="bf-step-card">
+            <div class="bf-step-number">01</div>
+            <div class="bf-step-content">
+              <h3>Probleem</h3>
+              <p>Kleine bedrijven weten vaak niet hoe ze moeten starten met adverteren en hebben vragen over prijs en aanpak. Daardoor moest er een tool komen die drempels verlaagt.</p>
+            </div>
+          </article>
+
+          <article class="bf-step-card">
+            <div class="bf-step-number">02</div>
+            <div class="bf-step-content">
+              <h3>Field research</h3>
+              <p>Uit gesprekken bleek dat Brightfish niet altijd bekend is en dat veel gebruikers nood hebben aan begeleiding. Daarom werd extra ingezet op eenvoud en snelle ondersteuning.</p>
+            </div>
+          </article>
+
+          <article class="bf-step-card">
+            <div class="bf-step-number">03</div>
+            <div class="bf-step-content">
+              <h3>UX flows</h3>
+              <p>Er werden twee duidelijke paden uitgewerkt: based on campaign en based on budget. Zo kan de gebruiker kiezen welke manier het best past bij zijn of haar situatie.</p>
+            </div>
+          </article>
+
+          <article class="bf-step-card">
+            <div class="bf-step-number">04</div>
+            <div class="bf-step-content">
+              <h3>Wireframes & prototype</h3>
+              <p>We werkten wireframes en een klikbaar prototype uit. Daarbij werd continu gekeken naar logica, validatie, schermvolgorde en bruikbaarheid.</p>
+            </div>
+          </article>
+
+          <article class="bf-step-card">
+            <div class="bf-step-number">05</div>
+            <div class="bf-step-content">
+              <h3>Design</h3>
+              <p>Op basis van de branding en klantdocumenten werd de visuele stijl verder uitgewerkt, zodat de tool professioneel en herkenbaar aanvoelde.</p>
+            </div>
+          </article>
+
+          <article class="bf-step-card">
+            <div class="bf-step-number">06</div>
+            <div class="bf-step-content">
+              <h3>Testen & iteraties</h3>
+              <p>De tool werd getest, teksten en labels werden verfijnd, de flow werd aangescherpt en kleine bugs werden opgelost voor een sterkere eindervaring.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bf-flows-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label"><span>03</span> Flows</p>
+          <h2 class="section-title">SCHERMEN<br><em>en keuzes</em></h2>
+        </div>
+
+        <p class="bf-flows-intro">
+          De calculator bevat twee duidelijke gebruikerspaden. Kies hieronder welke flow je wilt bekijken.
+        </p>
+
+        <figure class="bf-feature-image">
+          <img src="images/flows kiezen.png" alt="Keuzescherm voor de Brightfish flow selectie">
+        </figure>
+
+        <div class="bf-flow-switch-head">
+          <p class="bf-flow-switch-label">Kies een flow</p>
+        </div>
+
+        <div class="bf-flow-switch" role="tablist" aria-label="Kies een Brightfish flow">
+          <button class="bf-switch-btn active" type="button" data-flow="campaign">Campaign flow</button>
+          <button class="bf-switch-btn" type="button" data-flow="budget">Budget flow</button>
+        </div>
+
+        <div class="bf-flow-panel active" id="campaign-flow">
+          <div class="bf-flow-gallery">
+            <figure class="bf-flow-shot">
+              <img src="images/flow target adience 1&2.png" alt="Campaign flow scherm 1">
+            </figure>
+            <figure class="bf-flow-shot">
+              <img src="images/flow choose movie 1&2.png" alt="Campaign flow scherm 2">
+            </figure>
+            <figure class="bf-flow-shot">
+              <img src="images/flow location 1&2.png" alt="Campaign flow scherm 3">
+            </figure>
+            <figure class="bf-flow-shot">
+              <img src="images/flow select ad 1&2.png" alt="Campaign flow scherm 4">
+            </figure>
+            <figure class="bf-flow-shot">
+              <img src="images/flow advanced option 1&2.png" alt="Campaign flow scherm 5">
+            </figure>
+            <figure class="bf-flow-shot">
+              <img src="images/flow budget proposel 1.png" alt="Campaign flow scherm 6">
+            </figure>
+            <figure class="bf-flow-shot">
+              <img src="images/flow samenvatting 1.png" alt="Campaign flow scherm 7">
+            </figure>
+          </div>
+        </div>
+
+        <div class="bf-flow-panel" id="budget-flow">
+          <div class="bf-flow-gallery">
+            <figure class="bf-flow-shot">
+              <img src="images/flow budget kiezen 2 screen1.png" alt="Budget flow scherm 1">
+            </figure>
+            <figure class="bf-flow-shot">
+              <img src="images/flow target adience 1&2.png" alt="Budget flow scherm 2">
+            </figure>
+            <figure class="bf-flow-shot">
+              <img src="images/flow choose movie 1&2.png" alt="Budget flow scherm 3">
+            </figure>
+            <figure class="bf-flow-shot">
+              <img src="images/flow location 1&2.png" alt="Budget flow scherm 4">
+            </figure>
+            <figure class="bf-flow-shot">
+              <img src="images/flow advanced option 1&2.png" alt="Budget flow scherm 5">
+            </figure>
+            <figure class="bf-flow-shot">
+              <img src="images/flow samenvatting2.png" alt="Budget flow scherm 6">
+            </figure>
+          </div>
+        </div>
+
+        <div class="bf-video-wrap">
+          <video controls preload="metadata">
+            <source src="images/flow chatbot 1 en 2 .mp4" type="video/mp4">
+            Je browser ondersteunt deze video niet.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bf-role-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label"><span>04</span> Resultaat</p>
+          <h2 class="section-title">MIJN<br><em>bijdrage</em></h2>
+        </div>
+
+        <div class="bf-summary-grid">
+          <div class="bf-panel">
+            <h3>Frontend</h3>
+            <p>Opbouw van schermen, logische flow, visuele hiërarchie en aandacht voor duidelijke interactie tussen verschillende stappen.</p>
+          </div>
+
+          <div class="bf-panel">
+            <h3>UX & structuur</h3>
+            <p>Meedenken over schermvolgorde, gebruiksgemak, labels, keuzes en hoe de gebruiker zo weinig mogelijk frictie ervaart.</p>
+          </div>
+
+          <div class="bf-panel">
+            <h3>Design thinking</h3>
+            <p>De interface uitwerken vanuit research en branding, zodat de tool niet alleen werkt maar ook professioneel aanvoelt.</p>
+          </div>
+
+          <div class="bf-panel">
+            <h3>Impact</h3>
+            <p>Een duidelijkere flow, minder verwarring voor gebruikers en een tool die beter laat zien wat Brightfish aanbiedt.</p>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="foot">
-    <div class="footwrap">
-      <div class="foot-left">
-        <h3>Samplats</h3>
-        <p>Frontend developer & coach. Samen iets moois maken?</p>
-      </div>
-      <div class="foot-right">
-        <div class="foot-links">
-          <a href="index.html#projecten">Projecten</a>
-          <a href="index.html#contact">Contact</a>
-        </div>
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <a href="index.html#home" class="footer-logo">
+        <span class="logo-bracket"></span>SAM<span class="logo-accent">PLATS</span><span class="logo-bracket"></span>
+      </a>
+      <p class="footer-copy">© 2026 Samplats. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#projects">Projecten</a>
+        <a href="index.html#contact">Contact</a>
       </div>
     </div>
-    <div class="foot-copy">© 2025 Samplats</div>
   </footer>
 
-  <!-- jouw algemene script (hamburger, glass nav, etc.) -->
-  <script src="script.js"></script>
-  <!-- timeline script -->
-  <script src="progress.js"></script>
+  <script>
+    const header = document.getElementById('siteHeader');
+    const toggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navMenu.classList.toggle('active');
+      toggle.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', navMenu.classList.contains('active') ? 'true' : 'false');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !toggle.contains(e.target)) {
+        navMenu.classList.remove('active');
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 820) {
+        navMenu.classList.remove('active');
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    const flowButtons = document.querySelectorAll('.bf-switch-btn');
+    const flowPanels = document.querySelectorAll('.bf-flow-panel');
+
+    flowButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const selectedFlow = button.dataset.flow;
+
+        flowButtons.forEach(btn => btn.classList.remove('active'));
+        flowPanels.forEach(panel => panel.classList.remove('active'));
+
+        button.classList.add('active');
+        document.getElementById(`${selectedFlow}-flow`).classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>

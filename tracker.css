@@ -1,0 +1,267 @@
+.tr-hero {
+  padding: 120px 0 80px;
+  position: relative;
+}
+
+.tr-hero::before {
+  content: '';
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  right: -120px;
+  top: -40px;
+  background: radial-gradient(circle, rgba(255,107,53,0.10), transparent 65%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.tr-back-wrap {
+  margin-bottom: 36px;
+}
+
+.tr-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: var(--t);
+}
+
+.tr-back-link:hover {
+  color: var(--accent);
+}
+
+.tr-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.tr-kicker {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+.tr-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(3.8rem, 9vw, 8rem);
+  line-height: 0.9;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.tr-title em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.tr-lead {
+  max-width: 760px;
+  font-size: 1.08rem;
+  line-height: 1.9;
+  color: var(--text-soft);
+  margin-bottom: 28px;
+}
+
+.tr-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.tr-tags span {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  padding: 8px 12px;
+  border-radius: 999px;
+}
+
+.tr-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.tr-panel,
+.tr-step-card {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.tr-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.tr-panel {
+  padding: 26px;
+}
+
+.tr-panel h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.tr-panel p {
+  color: var(--text-soft);
+  line-height: 1.8;
+  font-size: 0.96rem;
+}
+
+.tr-timeline {
+  display: grid;
+  gap: 16px;
+}
+
+.tr-step-card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  overflow: hidden;
+}
+
+.tr-step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: rgba(255,184,0,0.2);
+  border-right: 1px solid var(--border);
+  min-height: 100%;
+}
+
+.tr-step-content {
+  padding: 24px 28px;
+}
+
+.tr-step-content h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.tr-step-content p {
+  color: var(--text-soft);
+  line-height: 1.8;
+}
+
+@media (max-width: 1100px) {
+  .tr-summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .tr-hero {
+    padding: 96px 0 50px;
+  }
+
+  .tr-back-wrap {
+    margin-bottom: 26px;
+  }
+
+  .tr-kicker {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+  }
+
+  .tr-title {
+    font-size: clamp(2.6rem, 13vw, 4.5rem);
+    line-height: 0.92;
+    margin-bottom: 18px;
+  }
+
+  .tr-lead {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .tr-tags {
+    gap: 8px;
+  }
+
+  .tr-tags span {
+    font-size: 0.68rem;
+    padding: 7px 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .tr-actions {
+    flex-direction: column;
+  }
+
+  .tr-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tr-step-card {
+    grid-template-columns: 1fr;
+  }
+
+  .tr-step-number {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    min-height: 72px;
+  }
+
+  .tr-panel,
+  .tr-step-content {
+    padding: 22px;
+  }
+
+  .tr-panel h3,
+  .tr-step-content h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tr-hero {
+    padding: 88px 0 42px;
+  }
+
+  .tr-title {
+    font-size: clamp(2.2rem, 12vw, 3.5rem);
+    line-height: 0.95;
+  }
+
+  .tr-kicker {
+    font-size: 0.68rem;
+  }
+
+  .tr-lead {
+    font-size: 0.94rem;
+    line-height: 1.7;
+  }
+
+  .tr-panel,
+  .tr-step-content {
+    padding: 18px;
+  }
+
+  .tr-step-number {
+    font-size: 1.8rem;
+    min-height: 60px;
+  }
+}
