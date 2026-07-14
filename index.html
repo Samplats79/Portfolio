@@ -147,7 +147,8 @@
                     <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </a>
-                 <a href="Professionele cv.pdf" class="btn btn-ghost" download>Bekijk cv</a>              </div>
+                <a href="Professionele cv.pdf" class="btn btn-ghost" download>Bekijk cv</a>
+              </div>
             </div>
           </div>
         </div>
@@ -225,42 +226,62 @@
               </a>
             </div>
           </article>
-<article class="project-item">
-  <div class="project-number">02</div>
 
-  <div class="project-visual">
-    <img src="images/tracker.svg" alt="Tracker app interface">
-  </div>
+          <article class="project-item">
+            <div class="project-number">02</div>
+            <div class="project-visual">
+              <img src="images/tracker.svg" alt="Tracker app interface">
+            </div>
+            <div class="project-info">
+              <p class="project-type">Web App</p>
+              <h3>Tracker App</h3>
+              <p>
+                Een app om activiteiten of gewoonten op te volgen met localStorage,
+                zodat gebruikers hun data makkelijk kunnen bewaren en terugzien.
+              </p>
+              <div class="project-tags">
+                <span>JavaScript</span>
+                <span>LocalStorage</span>
+                <span>CSS</span>
+              </div>
+              <a href="tracker.html" class="project-cta">
+                Bekijk project
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 8h10M9 4l4 4-4 4"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
 
-  <div class="project-info">
-    <p class="project-type">Web App</p>
-    <h3>Tracker App</h3>
-    <p>
-      Een app om activiteiten of gewoonten op te volgen met localStorage,
-      zodat gebruikers hun data makkelijk kunnen bewaren en terugzien.
-    </p>
-
-    <div class="project-tags">
-      <span>JavaScript</span>
-      <span>LocalStorage</span>
-      <span>CSS</span>
-    </div>
-
-    <a href="tracker.html" class="project-cta">
-      Bekijk project
-      <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-        <path d="M3 8h10M9 4l4 4-4 4"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"/>
-      </svg>
-    </a>
-  </div>
-</article>
+          <article class="project-item">
+            <div class="project-number">03</div>
+            <div class="project-visual">
+              <img src="images/Gathair logo.png" alt="GatHair website">
+            </div>
+            <div class="project-info">
+              <p class="project-type">Website</p>
+              <h3>GatHair</h3>
+              <p>Een elegante website voor een professionele kapsalon. Meertalig (NL/EN), met prijslijst, over-pagina en een luxe donker design met roze accenten.</p>
+              <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+              <a href="gathair.html" class="project-cta">
+                Bekijk project
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
 
           <article class="project-item project-coming">
-            <div class="project-number">03</div>
+            <div class="project-number">04</div>
             <div class="project-visual pv-three">
               <div class="pv-inner">
                 <span class="coming-label">Coming Soon</span>
@@ -578,15 +599,15 @@
         }, 3000);
       }
     });
-  document.querySelectorAll('.project-item').forEach(card => {
-    card.addEventListener('click', () => {
-      const link = card.querySelector('.project-cta');
-      if (link) {
-        window.location.href = link.getAttribute('href');
-      }
-    });
-  });
 
+    document.querySelectorAll('.project-item').forEach(card => {
+      card.addEventListener('click', () => {
+        const link = card.querySelector('.project-cta');
+        if (link) {
+          window.location.href = link.getAttribute('href');
+        }
+      });
+    });
   </script>
 </body>
 </html>
